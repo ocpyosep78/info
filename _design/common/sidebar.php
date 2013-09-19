@@ -1,8 +1,12 @@
-
-			<div class="primary-sidebar">
-							<div id="search-3" class="widget widget_search"><form method="get" id="searchform" class="searchform" action="http://demo.bright-theme.com/presto/" role="search">
-	<input type="search" name="s" value="" id="s" placeholder="To search type and hit enter" class="search-input" />	
-</form></div><div id="presto-social-counter-2" class="widget widget-social-counter">		<ul class="social-counter">
+<div class="primary-sidebar">
+	<div id="search-3" class="widget widget_search">
+		<form method="get" id="searchform" class="searchform" action="http://demo.bright-theme.com/presto/" role="search">
+			<input type="search" name="s" value="" id="s" placeholder="To search type and hit enter" class="search-input" />
+		</form>
+	</div>
+	
+	<div id="presto-social-counter-2" class="widget widget-social-counter">
+		<ul class="social-counter">
 			<li>
 				<a href="https://www.facebook.com/envato" class="social-counter-item">
 					<i class="icon icon-facebook"></i>
@@ -22,36 +26,48 @@
 				</a>
 			</li>
 		</ul>
+	</div>
 	
-		</div><div id="presto-ads-300x250-2" class="widget widget-ads-300x250"><div class="widget-title"><h3>300&#215;250 Ads &raquo;</h3></div><div class="ads-block"><a href="#" target="_blank" rel="nofollow"><img src="http://envato.s3.amazonaws.com/referrer_adverts/tutorials_300x250_v2.gif" alt=""></a></div></div><div id="presto-tabber-2" class="widget widget-tabber">		<div class="tabs tabber">
+	<div id="presto-ads-300x250-2" class="widget widget-ads-300x250">
+		<div class="widget-title"><h3>300&#215;250 Ads &raquo;</h3></div>
+		<div class="ads-block"><a href="#" target="_blank" rel="nofollow"><img src="http://envato.s3.amazonaws.com/referrer_adverts/tutorials_300x250_v2.gif" alt=""></a></div></div><div id="presto-tabber-2" class="widget widget-tabber">		<div class="tabs tabber">
 			<ul class="tab-header">
 				<li><a href="#tab-latest-5239546daced6">Latest</a></li>
 				<li><a href="#tab-popular-5239546daced6">Popular</a></li>
 				<li><a href="#tab-comment-5239546daced6">Comments</a></li>
 			</ul>
 			<div class="tab-contents">
-				<div id="tab-latest-5239546daced6" class="tab-content"><ul class="newsbox-list"><li><div class="newsbox-item">
-		<div class="post-thumbnail">
-		<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001545806234-70x70.jpg" alt="" class=""></a>
-	</div>
-		<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/" class="post-title">Top 50 Classic Wedding Songs</a>
-	<div class="postmeta">
-		by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-</div></li><li><div class="newsbox-item">
-		<div class="post-thumbnail">
-		<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file791271781089-70x70.jpg" alt="" class=""></a>
-	</div>
-		<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/" class="post-title">Education Tips: 15 Ideas That Will Encourage Kids to Write</a>
-	<div class="postmeta">
-		by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-</div></li><li><div class="newsbox-item">
-		<div class="post-thumbnail">
-		<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001944433273-70x70.jpg" alt="" class=""></a>
-	</div>
-		<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/" class="post-title">Your Money: 13 Money-saving Tips for 2013</a>
-	<div class="postmeta">
-		by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-</div></li><li><div class="newsbox-item">
+				<div id="tab-latest-5239546daced6" class="tab-content">
+					<ul class="newsbox-list">
+						<li>
+							<div class="newsbox-item">
+								<div class="post-thumbnail">
+									<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001545806234-70x70.jpg" alt="" class=""></a>
+								</div>
+								<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/" class="post-title">Top 50 Classic Wedding Songs</a>
+								<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsbox-item">
+								<div class="post-thumbnail">
+									<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file791271781089-70x70.jpg" alt="" class=""></a>
+								</div>
+								<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/" class="post-title">Education Tips: 15 Ideas That Will Encourage Kids to Write</a>
+								<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsbox-item">
+								<div class="post-thumbnail">
+									<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001944433273-70x70.jpg" alt="" class=""></a>
+								</div>
+								<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/" class="post-title">Your Money: 13 Money-saving Tips for 2013</a>
+								<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsbox-item">
 		<div class="post-thumbnail">
 		<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file000786402730-70x70.jpg" alt="" class=""></a>
 	</div>
@@ -169,10 +185,11 @@
 			<input class="feedburner-submit" type="submit" value="Subscribe">
 		</form>	
 
-	</div>						</div>
+	</div>
+</div>
 
-							<div class="secondary-sidebar">
-									<div id="presto-recent-random-posts-2" class="widget widget-latest-post-vertical"><div class="widget-title"><h3>Random &raquo;</h3></div>
+<div class="secondary-sidebar">
+	<div id="presto-recent-random-posts-2" class="widget widget-latest-post-vertical"><div class="widget-title"><h3>Random &raquo;</h3></div>
 		<ul class="latest-post-vertical">
 						<li>
 				<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/" class="post-title">News Portal Apps for Your Android Gadgets</a> <span class="post-time">(4 months ago)</span>
@@ -216,5 +233,6 @@
 			<li><a href="http://demo.bright-theme.com/presto/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="http://demo.bright-theme.com/presto/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
-</div>								</div>
+</div>
+</div>
 			

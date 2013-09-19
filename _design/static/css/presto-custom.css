@@ -1,0 +1,109 @@
+@import url(../font/signika.css);
+@import url(../font/oswald.css);
+
+body { font-family: "Signika"; }
+.main-navigation,
+.newsticker-heading h3,
+.floated-navigation,
+.widget-title,
+.tabs .tab-header,
+.widget-archive .archive-title h3,
+.author-info h3,
+.related-post h3,
+.comments-area .comments-heading,
+#respond h3,
+.review-area .review-heading {
+	font-family: "Oswald", Sans-serif;
+}
+.review-star .star-active { background-color: #ff564b; }		a,
+.newsticker-content ul li a:hover,
+.bottom-nav .social-links .icon-shuffle,
+.widget-top-carousel .top-carousel-title:hover,
+.widget-post-slider .post-slider-1 .slider-caption .slider-title a:hover,
+.widget-post-slider .post-slider-2 .slider-caption .slider-title a:hover,
+.widget-latest-post .post-title a:hover,
+.widget-newsbox-carousel .newsbox-carousel-title:hover,
+.widget-newsbox .newsbox-post-item .post-title a:hover,
+.widget-links li a:hover,
+.widget-blog .blog-grid .blog-post-item .post-title a:hover,
+.widget-blog .blog-list .post-title a:hover,
+.widget-blog .blog-conventional .post-title a:hover,
+.widget_categories ul li a:hover,
+.widget_archive ul li a:hover,
+.widget_recent_comments ul li a:hover, 
+.widget_recent_entries ul li a:hover,
+.widget_recent_comments ul li .url,
+.widget_pages ul li a:hover,
+.widget_meta ul li a:hover,
+.post-title:hover,
+.author-info h3,
+.comments-area .comments-heading .title,
+.post-navigation a:hover,
+.comment-post-title {
+	color: #ff564b;
+}
+
+/* Primary Color: Background */
+.bottom-nav .social-links .icon-shuffle:hover,
+.widget-top-carousel .top-carousel-pagination-inner .selected,
+.widget-top-carousel .top-carousel-pagination-inner .selected:hover,
+.review-area .overall,
+.tagcloud a {
+	background: #ff564b;
+}
+
+/* Primary Color: Border */
+.widget-flickr img:hover,
+.footer-widget-area .widget-flickr img:hover,
+.widget-social-counter .social-counter .social-counter-item:hover,
+blockquote,
+.author-info .avatar,
+.widget-archive .archive-title .avatar {
+	border-color: #ff564b;
+}
+table th {
+	border-bottom-color: #ff564b;
+}
+
+/* Primary COlor : Important */
+.footer-widget-area a:hover {
+	color: #ff564b !important;
+}
+.newsticker-heading h3 {
+	color: #ff564b;
+}
+.top-bar,
+.main-navigation {
+	border-bottom-color: #08B0AA;
+}
+.main-menu li.current-menu-item > a {
+	background: #08B0AA;
+}
+.top-menu > li > ul,
+.main-menu > li > ul {
+	border-top-color: #08B0AA;
+}
+.post-thumbnail .post-thumb-meta .postmeta-view, 
+.post-thumbnail .post-thumb-meta .postmeta-comment, 
+.widget-post-slider .post-slider-1 .slider-caption .postmeta-view, 
+.widget-post-slider .post-slider-1 .slider-caption .postmeta-comment {
+	background: #E32D21;
+}
+.post-thumbnail .post-thumb-meta .postmeta-comment,
+.widget-post-slider .post-slider-1 .slider-caption .postmeta-comment {
+	background: #63B008;
+}	.widget-title {
+	background: #f1f1f1 url(../img/textured_paper.png);
+	border: 1px solid #c2c2c2;
+	font-family: "Oswald", "Helvetica Neue", Arial, Helvetica, Sans-serif;
+	font-weight: normal;
+	height: 40px;
+	margin-bottom: 20px;
+	line-height: normal;
+	padding: 0 10px;
+
+	-webkit-box-shadow: 0 1px 3px #fff inset, 0 -1px 2px #d2d2d2 inset;
+	   -moz-box-shadow: 0 1px 3px #fff inset, 0 -1px 2px #d2d2d2 inset;
+		 -o-box-shadow: 0 1px 3px #fff inset, 0 -1px 2px #d2d2d2 inset;
+			box-shadow: 0 1px 3px #fff inset, 0 -1px 2px #d2d2d2 inset;
+}
