@@ -2,7 +2,7 @@
 				<div class="footer-widget-area">
 					<div class="row">
 													<div class="three columns footer-widget-area-1">
-							<div id="text-2" class="widget widget_text">			<div class="textwidget"><img src="http://demo.bright-theme.com/presto/wp-content/themes/presto/assets/images/float-logo.png" alt="">
+							<div id="text-2" class="widget widget_text">			<div class="textwidget"><img src="static/img/float-logo.png" alt="">
 <br>
 <strong>Presto</strong> is a powerful blog/magazine WordPress theme. Features responsive design lets your website adapt to any device screen sizes. Review system, unlimited colors, widget based homepage builder, and advanced options panel let you customize the theme easily.</div>
 		</div><div id="presto-social-links-2" class="widget widget-social-links"><ul class="social-profiles"><li><a href="#" class="icon-facebook" title="Facebook"></a></li><li><a href="#" class="icon-twitter" title="Twitter"></a></li><li><a href="#" class="icon-gplus" title="Google+"></a></li><li><a href="#" class="icon-pinterest" title="Pinterest"></a></li><li><a href="#" class="icon-linkedin" title="LinkedIn"></a></li><li><a href="#" class="icon-flickr" title="Flickr"></a></li><li><a href="#" class="icon-instagram" title="Instagram"></a></li><li><a href="#" class="icon-picasa" title="Picasa"></a></li><li><a href="#" class="icon-vimeo" title="Vimeo"></a></li><li><a href="#" class="icon-dribbble" title="Dribbble"></a></li><li><a href="#" class="icon-tumblr" title="Tumblr"></a></li><li><a href="#" class="icon-stumbleupon" title="Stumbleupon"></a></li><li><a href="#" class="icon-skype" title="Skype"></a></li><li><a href="#" class="icon-behance" title="Behance"></a></li></ul></div>							</div>

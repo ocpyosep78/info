@@ -32,7 +32,7 @@
 </ul>							<script type="text/javascript">
 							//<![CDATA[
 							jQuery(document).ready(function(){
-								jQuery(".float-menu li.menu-item-home > a").html( '<img src="http://demo.bright-theme.com/presto/wp-content/themes/presto/assets/images/float-logo.png" alt="Home">' )
+								jQuery(".float-menu li.menu-item-home > a").html( '<img src="static/img/float-logo.png" alt="Home">' )
 							});
 							//]]>
 							</script>

@@ -24,10 +24,10 @@
 				<div class="main-header row">
 					<div class="twelve columns">
 						<div class="logo fl">
-							<a href="http://demo.bright-theme.com/presto/"><img src="http://demo.bright-theme.com/presto/wp-content/themes/presto/assets/images/logo.png" alt="Presto"></a>
+							<a href="http://demo.bright-theme.com/presto/"><img src="static/img/ig_logo.gif" alt="Presto"></a>
 						</div><!-- .logo -->
 						<div class="header-ads fr">
-															<a href="http://" target="_blank" rel="nofollow"><img src="http://envato.s3.amazonaws.com/referrer_adverts/tutorials_728x90_v2.gif" alt=""></a>
+															<a href="http://" target="_blank" rel="nofollow"><img src="static/upload/tutorials_728x90_v2.gif" alt=""></a>
 													</div><!-- .header-ads -->
 					</div>
 				</div><!-- .main-header -->
