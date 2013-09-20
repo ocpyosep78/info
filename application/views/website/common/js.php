@@ -1,0 +1,9 @@
+<script type='text/javascript' src='static/js/jquery.carouFredSel.js'></script>
+<script type='text/javascript' src='static/js/jquery.hoverIntent.minified.js'></script>
+<script type='text/javascript' src='static/js/jquery.flexslider-min.js'></script>
+<script type='text/javascript' src='static/js/jquery.ui.core.js'></script>
+<script type='text/javascript' src='static/js/jquery.ui.widget.js'></script>
+<script type='text/javascript' src='static/js/jquery.ui.accordion.js'></script>
+<script type='text/javascript' src='static/js/jquery.ui.tabs.js'></script>
+<script type='text/javascript' src='static/js/jquery.tipsy.js'></script>
+<script type='text/javascript' src='static/js/theme.js'></script>
