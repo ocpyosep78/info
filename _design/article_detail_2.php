@@ -20,7 +20,7 @@
 		| <a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/#respond" title="Comment on Samsung Premiere 2013 Will Unveil New Galaxy and ATIV Devices">No comments</a>				
 		<br>Posted under: <a href="http://demo.bright-theme.com/presto/category/technology/" title="View all posts in Technology" rel="category tag">Technology</a>	</div>
 	<div class="post-body cf">
-		<img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file5901240433821-620x350.jpg" alt="" class="post-format">
+		<img src="static/upload/file5901240433821-620x350.jpg" alt="" class="post-format">
 		<div class="review-area review-right">
 			<h3 class="review-heading">Review Overview &raquo;</h3>
 			<div class="review-criteria">
@@ -88,7 +88,7 @@
 	<div class="author-status">
 		9 stories / <a href="http://demo.bright-theme.com/presto/author/Iskandar/">Browse all stories</a>	</div>
 	<div class="author-description cf">
-		<img alt='' src='http://1.gravatar.com/avatar/b848fe29064e7f3c38ec0c04770c6d32?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' />		Hi, I'm Iskandar. A newbie web designer and WordPress theme developer from Indonesia. You can see my portfolios at Theme Forest. Please write more about yourself here.	</div>
+		<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-80 photo' height='80' width='80' />		Hi, I'm Iskandar. A newbie web designer and WordPress theme developer from Indonesia. You can see my portfolios at Theme Forest. Please write more about yourself here.	</div>
 </div>
 
 <div class="related-post">
@@ -96,7 +96,8 @@
 			<div class="row">
 						<div class="four columns mb-10">
 											<div class="post-thumbnail mb-10">
-							<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file000970069370-280x180.jpg" alt="" class=""></a>							
+							<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/">
+								<img src="static/upload/file000970069370-280x180.jpg" alt="" class=""></a>							
 						</div>
 										<div class="postmeta mb-5">
 						by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>					</div><!-- .postmeta -->
@@ -104,7 +105,8 @@
 				</div>
 						<div class="four columns mb-10">
 											<div class="post-thumbnail mb-10">
-							<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file2811310649672-280x180.jpg" alt="" class=""></a>							
+							<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/">
+								<img src="static/upload/file2811310649672-280x180.jpg" alt="" class=""></a>							
 						</div>
 										<div class="postmeta mb-5">
 						by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>					</div><!-- .postmeta -->
@@ -112,7 +114,8 @@
 				</div>
 						<div class="four columns mb-10">
 											<div class="post-thumbnail mb-10">
-							<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file6681269982727-280x180.jpg" alt="" class=""></a>							
+							<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/">
+								<img src="static/upload/file6681269982727-280x180.jpg" alt="" class=""></a>							
 						</div>
 										<div class="postmeta mb-5">
 						by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>					</div><!-- .postmeta -->

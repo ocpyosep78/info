@@ -23,7 +23,8 @@
 <div class="blog-grid" ><div class="row blog-post-row"><div class="six columns">
 	<article class="post-72 post type-post status-publish format-standard hentry category-entertainment category-lifestyle tag-love tag-song latest-post-item blog-post-item post-hover-animate">
 		<div class="post-thumbnail mb-10">
-		<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001545806234-280x180.jpg" alt="" class=""></a>
+		<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/">
+			<img src="static/upload/file0001545806234-280x180.jpg" alt="" class=""></a>
 		<div class="post-thumb-meta">
 			<div class="fl">
 				<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
@@ -44,7 +45,8 @@
 <div class="six columns">
 <article class="post-43 post type-post status-publish format-standard hentry category-lifestyle tag-money latest-post-item blog-post-item post-hover-animate">
 		<div class="post-thumbnail mb-10">
-		<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001944433273-280x180.jpg" alt="" class=""></a>
+		<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/">
+			<img src="static/upload/file0001944433273-280x180.jpg" alt="" class=""></a>
 		<div class="post-thumb-meta">
 			<div class="fl">
 				<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
@@ -64,7 +66,8 @@
 </div></div><div class="row blog-post-row"><div class="six columns">
 <article class="post-40 post type-post status-publish format-standard hentry category-lifestyle tag-management tag-time latest-post-item blog-post-item post-hover-animate">
 		<div class="post-thumbnail mb-10">
-		<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file000786402730-280x180.jpg" alt="" class=""></a>
+		<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/">
+			<img src="static/upload/file000786402730-280x180.jpg" alt="" class=""></a>
 		<div class="post-thumb-meta">
 			<div class="fl">
 				<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
@@ -84,7 +87,7 @@
 </div><div class="six columns">
 <article class="post-37 post type-post status-publish format-standard hentry category-lifestyle tag-love tag-relationship latest-post-item blog-post-item post-hover-animate">
 		<div class="post-thumbnail mb-10">
-		<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001941256237-280x180.jpg" alt="" class=""></a>
+		<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/"><img src="static/upload/file0001941256237-280x180.jpg" alt="" class=""></a>
 		<div class="post-thumb-meta">
 			<div class="fl">
 				<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>

@@ -17,7 +17,7 @@
 	by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>				| <a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/#comments" title="Comment on Top 50 Classic Wedding Songs">7 comments</a>				
 	<br>Posted under: <a href="http://demo.bright-theme.com/presto/category/entertainment/" title="View all posts in Entertainment" rel="category tag">Entertainment</a>, <a href="http://demo.bright-theme.com/presto/category/lifestyle/" title="View all posts in Lifestyle" rel="category tag">Lifestyle</a>	</div>
 <div class="post-body cf">
-	<img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001545806234-620x350.jpg" alt="" class="post-format">				<p>Hey there where ya goin&#8217;, not exactly knowin&#8217;, who says you have to call just one place home. He&#8217;s goin&#8217; everywhere, B.J. McKay and his best friend Bear. He just keeps on movin&#8217;, ladies keep improvin&#8217;, every day is better than the last. New dreams and better scenes, and best of all I don&#8217;t pay property tax. Rollin&#8217; down to Dallas, who&#8217;s providin&#8217; my palace, off to New Orleans or who knows where. Places new and ladies, too, I&#8217;m B.J. McKay and this is my best friend Bear.</p>
+	<img src="static/upload/file0001545806234-620x350.jpg" alt="" class="post-format">				<p>Hey there where ya goin&#8217;, not exactly knowin&#8217;, who says you have to call just one place home. He&#8217;s goin&#8217; everywhere, B.J. McKay and his best friend Bear. He just keeps on movin&#8217;, ladies keep improvin&#8217;, every day is better than the last. New dreams and better scenes, and best of all I don&#8217;t pay property tax. Rollin&#8217; down to Dallas, who&#8217;s providin&#8217; my palace, off to New Orleans or who knows where. Places new and ladies, too, I&#8217;m B.J. McKay and this is my best friend Bear.</p>
 <blockquote><p>Knight Rider, a shadowy flight into the dangerous world of a man who does not exist. Michael Knight, a young loner on a crusade to champion the cause of the innocent, the helpless in a world of criminals who operate above the law.</p></blockquote>
 <p>Mutley, you snickering, floppy eared hound. When courage is needed, you&#8217;re never around. Those medals you wear on your moth-eaten chest should be there for bungling at which you are best.</p>
 <p>Hey there where ya goin&#8217;, not exactly knowin&#8217;, who says you have to call just one place home. He&#8217;s goin&#8217; everywhere, B.J. McKay and his best friend Bear. He just keeps on movin&#8217;, ladies keep improvin&#8217;, every day is better than the last. New dreams and better scenes, and best of all I don&#8217;t pay property tax. Rollin&#8217; down to Dallas, who&#8217;s providin&#8217; my palace, off to New Orleans or who knows where. Places new and ladies, too, I&#8217;m B.J. McKay and this is my best friend Bear.</p>
@@ -38,7 +38,7 @@
 <div class="author-status">
 	9 stories / <a href="http://demo.bright-theme.com/presto/author/Iskandar/">Browse all stories</a>	</div>
 <div class="author-description cf">
-	<img alt='' src='http://1.gravatar.com/avatar/b848fe29064e7f3c38ec0c04770c6d32?s=80&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D80&amp;r=G' class='avatar avatar-80 photo' height='80' width='80' />		Hi, I'm Iskandar. A newbie web designer and WordPress theme developer from Indonesia. You can see my portfolios at Theme Forest. Please write more about yourself here.	</div>
+	<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-80 photo' height='80' width='80' />		Hi, I'm Iskandar. A newbie web designer and WordPress theme developer from Indonesia. You can see my portfolios at Theme Forest. Please write more about yourself here.	</div>
 </div>
 
 <div class="related-post">
@@ -46,7 +46,8 @@
 		<div class="row">
 					<div class="four columns mb-10">
 										<div class="post-thumbnail mb-10">
-						<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001944433273-280x180.jpg" alt="" class=""></a>							
+						<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/">
+							<img src="static/upload/file0001944433273-280x180.jpg" alt="" class=""></a>							
 					</div>
 									<div class="postmeta mb-5">
 					by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>					</div><!-- .postmeta -->
@@ -54,7 +55,8 @@
 			</div>
 					<div class="four columns mb-10">
 										<div class="post-thumbnail mb-10">
-						<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file000786402730-280x180.jpg" alt="" class=""></a>							
+						<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/">
+							<img src="static/upload/file000786402730-280x180.jpg" alt="" class=""></a>							
 					</div>
 									<div class="postmeta mb-5">
 					by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>					</div><!-- .postmeta -->
@@ -62,7 +64,7 @@
 			</div>
 					<div class="four columns mb-10">
 										<div class="post-thumbnail mb-10">
-						<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/"><img src="http://demo.bright-theme.com/presto/wp-content/uploads/2013/05/file0001941256237-280x180.jpg" alt="" class=""></a>							
+						<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/"><img src="static/upload/file0001941256237-280x180.jpg" alt="" class=""></a>							
 					</div>
 									<div class="postmeta mb-5">
 					by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>					</div><!-- .postmeta -->
@@ -81,7 +83,7 @@
 		<li class="comment even thread-even depth-1" id="li-comment-4">
 	<div class="comment-post" id="comment-4">
 		<div class="comment-avatar">
-			<img alt='' src='http://0.gravatar.com/avatar/c8e08d3c0739de75e912f4959b453424?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>
+			<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-60 photo' height='60' width='60' />			</div>
 		<div class="comment-detail">
 			<span class="t-pad"></span>
 			<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
@@ -98,7 +100,7 @@
 <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-5">
 	<div class="comment-post" id="comment-5">
 		<div class="comment-avatar">
-			<img alt='' src='http://0.gravatar.com/avatar/c8e08d3c0739de75e912f4959b453424?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>
+			<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-60 photo' height='60' width='60' />			</div>
 		<div class="comment-detail">
 			<span class="t-pad"></span>
 			<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
@@ -115,7 +117,7 @@
 <li class="comment even depth-2" id="li-comment-7">
 	<div class="comment-post" id="comment-7">
 		<div class="comment-avatar">
-			<img alt='' src='http://0.gravatar.com/avatar/c8e08d3c0739de75e912f4959b453424?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>
+			<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-60 photo' height='60' width='60' />			</div>
 		<div class="comment-detail">
 			<span class="t-pad"></span>
 			<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
@@ -132,7 +134,7 @@
 <li class="comment odd alt depth-3" id="li-comment-9">
 	<div class="comment-post" id="comment-9">
 		<div class="comment-avatar">
-			<img alt='' src='http://0.gravatar.com/avatar/a791b4e30a8fb2d14e55acdfbbbb1720?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>
+			<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-60 photo' height='60' width='60' />			</div>
 		<div class="comment-detail">
 			<span class="t-pad"></span>
 			<div class="comment-user">hapiga</div>
@@ -149,7 +151,7 @@
 <li class="comment even depth-4" id="li-comment-10">
 	<div class="comment-post" id="comment-10">
 		<div class="comment-avatar">
-			<img alt='' src='http://0.gravatar.com/avatar/878a82b41eb7f295f0f3189ff6ef0f23?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>
+			<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-60 photo' height='60' width='60' />			</div>
 		<div class="comment-detail">
 			<span class="t-pad"></span>
 			<div class="comment-user"><a href='http://lukman.my.id' rel='external nofollow' class='url'>lukman</a></div>
@@ -172,7 +174,7 @@
 <li class="comment odd alt thread-even depth-1" id="li-comment-6">
 	<div class="comment-post" id="comment-6">
 		<div class="comment-avatar">
-			<img alt='' src='http://0.gravatar.com/avatar/c8e08d3c0739de75e912f4959b453424?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>
+			<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-60 photo' height='60' width='60' />			</div>
 		<div class="comment-detail">
 			<span class="t-pad"></span>
 			<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
@@ -189,7 +191,7 @@
 <li class="comment even thread-odd thread-alt depth-1" id="li-comment-12">
 	<div class="comment-post" id="comment-12">
 		<div class="comment-avatar">
-			<img alt='' src='http://0.gravatar.com/avatar/6a541389af0e089bdfef625bf49895bf?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			</div>
+			<img alt='' src='static/upload/ad516503a11cd5ca435acc9bb6523536.png' class='avatar avatar-60 photo' height='60' width='60' />			</div>
 		<div class="comment-detail">
 			<span class="t-pad"></span>
 			<div class="comment-user"><a href='http://www.google.com' rel='external nofollow' class='url'>AK</a></div>
