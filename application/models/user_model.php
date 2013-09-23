@@ -110,11 +110,8 @@ class User_model extends CI_Model {
 				'Title' => 'Content Management',
 				'Child' => array(
 					array( 'Title' => 'Post', 'Link' => base_url('panel/content/post') ),
-					array( 'Title' => 'Scrape', 'Link' => base_url('panel/content/scrape') ),
 					array( 'Title' => 'Comment', 'Link' => base_url('panel/content/comment') ),
-					array( 'Title' => 'Request', 'Link' => base_url('panel/content/request') ),
-					array( 'Title' => 'Contact', 'Link' => base_url('panel/content/contact') ),
-					array( 'Title' => 'Shink Link', 'Link' => base_url('panel/content/shink_link') )
+					array( 'Title' => 'Contact', 'Link' => base_url('panel/content/contact') )
 				)
 			),
 			array(
@@ -128,9 +125,7 @@ class User_model extends CI_Model {
 				'Title' => 'Master',
 				'Child' => array(
 					array( 'Title' => 'Page Static', 'Link' => base_url('panel/master/page_static') ),
-					array( 'Title' => 'Scrape', 'Link' => base_url('panel/master/scrape') ),
-					array( 'Title' => 'Category', 'Link' => base_url('panel/master/category') ),
-					array( 'Title' => 'Config', 'Link' => base_url('panel/master/config') )
+					array( 'Title' => 'Category', 'Link' => base_url('panel/master/category') )
 				)
 			)
 		);
@@ -142,7 +137,7 @@ class User_model extends CI_Model {
 	
 	function is_login($admin_level = false) {
 		$user = $this->get_session();
-		$result = (count($user) > 0) ? true : false;
+		$result = (count($user) > 0 && @$user['is_login']) ? true : false;
 		
 		if ($result && $admin_level) {
 			if ($user['user_type_id'] != USER_TYPE_ADMINISTRATOR) {
@@ -162,11 +157,13 @@ class User_model extends CI_Model {
 	}
 	
 	function set_session($user) {
+		$user['is_login'] = true;
+		
 		// set session
 		$_SESSION['user_login'] = $user;
 		
 		// set cookie
-		$cookie_value =  mcrypt_encode(json_encode($user));
+		$cookie_value = mcrypt_encode(json_encode($user));
 		setcookie("user_login", $cookie_value, time() + (60 * 60 * 5), '/');
 	}
 	
@@ -174,6 +171,11 @@ class User_model extends CI_Model {
 		$user = (isset($_SESSION['user_login'])) ? $_SESSION['user_login'] : array();
 		if (! is_array($user)) {
 			$user = array();
+		}
+		
+		// check from cookie
+		if (count($user) == 0) {
+			$user = $this->get_cookies();
 		}
 		
 		return $user;

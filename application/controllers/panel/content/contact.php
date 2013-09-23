@@ -1,5 +1,5 @@
 <?php
-class contact extends SUEKAREA_Controller {
+class contact extends INFOGUE_Controller {
     function __construct() {
         parent::__construct();
     }

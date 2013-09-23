@@ -1,5 +1,5 @@
 <?php
-class post extends SUEKAREA_Controller {
+class post extends INFOGUE_Controller {
     function __construct() {
         parent::__construct();
     }

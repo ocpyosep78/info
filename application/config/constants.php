@@ -15,23 +15,17 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 define('SHA_SECRET',							'1nf09u3');
-define('POST_TYPE_DRAFT',						1);
+define('POST_STATUS_DRAFT',						1);
+define('POST_STATUS_PUBLISH',					2);
 define('USER_TYPE_ADMINISTRATOR',				1);
 define('USER_TYPE_MEMBER',						2);
 
 define('CATEGORY',								'category');
-define('COMMENT',								'comment');
 define('CONTACT',								'contact');
-define('LINK_SHORT',							'link_short');
 define('PAGE_STATIC',							'page_static');
 define('POST',									'post');
+define('POST_STATUS',							'post_status');
 define('POST_TAG',								'post_tag');
-define('POST_TYPE',								'post_type');
-define('REQUEST',								'request');
-define('SCRAPE_CONTENT',						'scrape_content');
-define('SCRAPE_MASTER',							'scrape_master');
-define('SHOUT_CONTENT',							'shout_content');
-define('SHOUT_MASTER',							'shout_master');
 define('TAG',									'tag');
 define('USER',									'user');
 define('USER_TYPE',								'user_type');

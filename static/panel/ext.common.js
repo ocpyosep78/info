@@ -236,11 +236,11 @@ var Store = {
 		});
 		return Store;
 	},
-	PostType: function() {
+	PostStatus: function() {
 		var Store = new Ext.create('Ext.data.Store', {
 			fields: ['id', 'name'],
 			autoLoad: true, proxy: {
-				type: 'ajax', extraParams: { action: 'post_type' },
+				type: 'ajax', extraParams: { action: 'post_status' },
 				url: URLS.base + 'panel/combo',
 				reader: { type: 'json', root: 'res' },
 				actionMethods: { read: 'POST' }
@@ -302,9 +302,9 @@ var Combo = {
 			
 			return p;
 		},
-		PostType: function(Param) {
+		PostStatus: function(Param) {
 			var p = {
-				xtype: 'combo', store: Store.PostType(), minChars: 1, selectOnFocus: true,
+				xtype: 'combo', store: Store.PostStatus(), minChars: 1, selectOnFocus: true,
 				valueField: 'id', displayField: 'name', readonly: true, editable: false
 			}
 			p = Func.SyncComboParam(p, Param);
@@ -362,8 +362,8 @@ Combo.Class = {
 		var c = new Ext.form.ComboBox(Combo.Param.LinkShort(Param));
 		return c;
 	},
-	PostType: function(Param) {
-		var c = new Ext.form.ComboBox(Combo.Param.PostType(Param));
+	PostStatus: function(Param) {
+		var c = new Ext.form.ComboBox(Combo.Param.PostStatus(Param));
 		return c;
 	},
 	ScrapeMaster: function(Param) {

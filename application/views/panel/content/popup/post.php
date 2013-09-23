@@ -9,16 +9,13 @@
 		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Content :</div>
 		<div style="float: left; width: 600px;"><div id="descED"></div></div>
 		<div class="clear"></div>
-		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Download:</div>
-		<div style="float: left; width: 600px;"><div id="downloadED"></div></div>
-		<div class="clear"></div>
 	</div>
 	<div style="float: left; width: 350px;">
 		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Category :</div>
 		<div style="float: left; width: 250px;"><div id="categoryED"></div></div>
 		<div class="clear"></div>
-		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Post Type :</div>
-		<div style="float: left; width: 250px;"><div id="post_typeED"></div></div>
+		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Status :</div>
+		<div style="float: left; width: 250px;"><div id="post_statusED"></div></div>
 		<div class="clear"></div>
 		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Publish Date :</div>
 		<div style="float: left; width: 125px;"><div id="publish_dateED"></div></div>
@@ -30,9 +27,6 @@
 		<div class="clear"></div>
 		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Tag :</div>
 		<div style="float: left; width: 250px;"><div id="tagED"></div></div>
-		<div class="clear"></div>
-		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Canonical :</div>
-		<div style="float: left; width: 250px;"><div id="link_canonicalED"></div></div>
 		<div class="clear"></div>
 		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">&nbsp;</div>
 		<div class="clear"></div>

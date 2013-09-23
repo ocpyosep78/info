@@ -1,5 +1,6 @@
 <?php
-	$array_data['POST_TYPE_MULTI_LINK'] = POST_TYPE_MULTI_LINK;
+	$array_data = array();
+	$array_data['POST_STATUS_PUBLISH'] = POST_STATUS_PUBLISH;
 	$array_js[] = base_url('static/panel/content/post.js');
 ?>
 

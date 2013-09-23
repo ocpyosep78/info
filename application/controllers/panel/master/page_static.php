@@ -1,5 +1,5 @@
 <?php
-class page_static extends SUEKAREA_Controller {
+class page_static extends INFOGUE_Controller {
     function __construct() {
         parent::__construct();
     }

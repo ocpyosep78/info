@@ -12,7 +12,7 @@ Ext.onReady(function() {
 		autoLoad: true, pageSize: 25, remoteSort: true,
         sorters: [{ property: 'create_date', direction: 'DESC' }],
 		fields: [
-			'id', 'user_id', 'category_id', 'category_name', 'post_type_id', 'post_type_name', 'alias', 'name', 'desc', 'create_date',
+			'id', 'user_id', 'category_id', 'category_name', 'post_status_id', 'post_status_name', 'alias', 'name', 'desc', 'create_date',
 			'publish_date', 'view_count', 'post_link', 'is_hot', 'is_popular', 'user_fullname'
 		],
 		proxy: {
@@ -29,7 +29,7 @@ Ext.onReady(function() {
 					header: 'Judul', dataIndex: 'name', sortable: true, filter: true, width: 200, flex: 1
 			}, {	header: 'User', dataIndex: 'user_fullname', sortable: true, filter: true, width: 100
 			}, {	header: 'Kategori', dataIndex: 'category_name', sortable: true, filter: true, width: 75
-			}, {	header: 'Tipe Post', dataIndex: 'post_type_name', sortable: true, filter: true, width: 75
+			}, {	header: 'Tipe Status', dataIndex: 'post_status_name', sortable: true, filter: true, width: 75
 			}, {	header: 'Publish', dataIndex: 'publish_date', sortable: true, filter: true, width: 150, align: 'center'
 			}, {	header: 'Dilihat', dataIndex: 'view_count', sortable: true, filter: true, width: 60, align: 'right'
 			}, {	header: 'Hot', xtype: 'actioncolumn', width: 75, align: 'center',
@@ -195,16 +195,14 @@ Ext.onReady(function() {
 								}
 							});
 							win.alias = new Ext.form.TextField({ renderTo: 'aliasED', width: 575 });
-							win.desc = new Ext.form.HtmlEditor({ renderTo: 'descED', width: 575, height: 265, enableFont: false });
-							win.download = new Ext.form.TextArea({ renderTo: 'downloadED', width: 575, height: 130, allowBlank: false, blankText: 'Masukkan Link Source' });
+							win.desc = new Ext.form.HtmlEditor({ renderTo: 'descED', width: 575, height: 400, enableFont: false });
 							win.category = Combo.Class.Category({ renderTo: 'categoryED', width: 225, allowBlank: false, blankText: 'Masukkan Kategori' });
-							win.post_type = Combo.Class.PostType({ renderTo: 'post_typeED', width: 225, allowBlank: false, blankText: 'Masukkan Jenis Post', value: page_data.POST_TYPE_MULTI_LINK });
+							win.post_status = Combo.Class.PostStatus({ renderTo: 'post_statusED', width: 225, allowBlank: false, blankText: 'Masukkan Status Post', value: page_data.POST_STATUS_PUBLISH });
 							win.publish_date = new Ext.form.DateField({ renderTo: 'publish_dateED', width: 120, format: DATE_FORMAT, allowBlank: false, blankText: 'Masukkan Tanggal Publish', value: new Date() });
 							win.publish_time = Combo.Class.Time({ renderTo: 'publish_timeED', width: 100, allowBlank: false, blankText: 'Masukkan Jam Publish', value: new Date() });
 							win.create_date = new Ext.form.DateField({ renderTo: 'create_dateED', width: 120, format: DATE_FORMAT, allowBlank: false, blankText: 'Masukkan Tanggal Create', value: new Date() });
 							win.create_time = Combo.Class.Time({ renderTo: 'create_timeED', width: 100, allowBlank: false, blankText: 'Masukkan Jam Create', value: new Date() });
 							win.tag = new Ext.form.TextArea({ renderTo: 'tagED', width: 225, height: 50 });
-							win.link_canonical = new Ext.form.TextField({ renderTo: 'link_canonicalED', width: 225 });
 							win.thumbnail = new Ext.form.TextField({ renderTo: 'thumbnailED', width: 225, readOnly: true });
 							win.thumbnail_button = new Ext.Button({ renderTo: 'btn_thumbnailED', text: 'Browse', width: 75, handler: function(btn) {
 								window.iframe_thumbnail.browse();
@@ -218,9 +216,7 @@ Ext.onReady(function() {
 								win.alias.setValue(param.alias);
 								win.thumbnail.setValue(param.thumbnail);
 								win.category.setValue(param.category_id);
-								win.post_type.setValue(param.post_type_id);
-								win.download.setValue(param.download);
-								win.link_canonical.setValue(param.link_canonical);
+								win.post_status.setValue(param.post_status_id);
 								
 								win.publish_date.setValue(Renderer.GetDateFromString.Date(param.publish_date));
 								win.publish_time.setValue(Renderer.GetDateFromString.Time(param.publish_date));
@@ -252,11 +248,9 @@ Ext.onReady(function() {
 				ajax.desc = win.desc.getValue();
 				ajax.alias = win.alias.getValue();
 				ajax.thumbnail = win.thumbnail.getValue();
-				ajax.download = win.download.getValue();
 				ajax.category_id = win.category.getValue();
-				ajax.post_type_id = win.post_type.getValue();
+				ajax.post_status_id = win.post_status.getValue();
 				ajax.tag = win.tag.getValue();
-				ajax.link_canonical = win.link_canonical.getValue();
 				
 				// Validation
 				var is_valid = true;
@@ -266,10 +260,7 @@ Ext.onReady(function() {
 				if (! win.category.validate()) {
 					is_valid = false;
 				}
-				if (! win.download.validate()) {
-					is_valid = false;
-				}
-				if (! win.post_type.validate()) {
+				if (! win.post_status.validate()) {
 					is_valid = false;
 				}
 				if (! win.publish_date.validate()) {
