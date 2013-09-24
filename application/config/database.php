@@ -10,9 +10,9 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
 	$db['default']['database'] = 'infogue_db';
 } else if ($_SERVER['SERVER_NAME'] == 'infogue.com' || $_SERVER['SERVER_NAME'] == 'www.infogue.com') {
 	$db['default']['hostname'] = 'localhost';
-	$db['default']['username'] = 'suekare1_315';
-	$db['default']['password'] = 'saahcnt&5-';
-	$db['default']['database'] = 'suekare1_media';
+	$db['default']['username'] = 'infoguec_user';
+	$db['default']['password'] = 'g@mpang';
+	$db['default']['database'] = 'infoguec_new_db';
 }
 
 $db['default']['dbdriver'] = 'mysql';
