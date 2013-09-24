@@ -1,26 +1,29 @@
+<?php
+	$array_category = $this->Category_model->get_array();
+?>
 <header class="site-header">
 <div class="top-bar row">
 	<div class="twelve columns">
 		<nav class="top-navigation fl">
 			<ul id="menu-top-menu" class="top-menu">
-				<li><a href="http://demo.bright-theme.com/presto/full-width/">Full Width</a></li>
-				<li><a href="http://demo.bright-theme.com/presto-rtl">RTL</a></li>
-				<li><a href="http://demo.bright-theme.com/presto/blog/">Blog</a></li>
-				<li><a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/">Review Post</a></li>
+				<li><a href="#">Full Width</a></li>
+				<li><a href="#">RTL</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Review Post</a></li>
 			</ul>
 			<div class="top-menu-mobile">
 				<span class="icon-menu"></span>
 				<ul id="menu-top-menu-1" class="top-mobile-menu">
-					<li><a href="http://demo.bright-theme.com/presto/full-width/">Full Width</a></li>
-					<li><a href="http://demo.bright-theme.com/presto-rtl">RTL</a></li>
-					<li><a href="http://demo.bright-theme.com/presto/blog/">Blog</a></li>
-					<li><a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/">Review Post</a></li>
+					<li><a href="#">Full Width</a></li>
+					<li><a href="#">RTL</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Review Post</a></li>
 				</ul>
 			</div>
 		</nav>
 		<div class="top-search fr">
-			<form class="search-form" method="get" action="http://demo.bright-theme.com/presto/">
-				<input class="top-search-input" name="s" placeholder="To search type and hit enter" type="text">
+			<form class="search-form" method="post" action="<?php echo base_url('search'); ?>">
+				<input class="top-search-input" name="keyword" placeholder="To search type and hit enter" type="text" />
 			</form>
 		</div>
 	</div>
@@ -29,10 +32,10 @@
 <div class="main-header row">
 	<div class="twelve columns">
 		<div class="logo fl">
-			<a href="http://demo.bright-theme.com/presto/"><img src="static/img/ig_logo.gif" alt="Presto"></a>
+			<a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>/static/img/ig_logo.gif" alt="Infogue"></a>
 		</div>
 		<div class="header-ads fr">
-			<a href="http://" target="_blank" rel="nofollow"><img src="static/upload/tutorials_728x90_v2.gif" alt=""></a>
+			<a target="_blank" rel="nofollow"><img src="<?php echo base_url(); ?>/static/upload/tutorials_728x90_v2.gif" alt=""></a>
 		</div>
 	</div>
 </div>
@@ -41,34 +44,10 @@
 	<div class="twelve columns">
 		<nav class="main-navigation">
 			<ul id="menu-main-menu" class="main-menu">
-				<li class="current-menu-item"><a href="http://demo.bright-theme.com/presto/">Home</a></li>
-				<li><a href="http://demo.bright-theme.com/presto/category/education/">Education</a></li>
-				<li><a href="http://demo.bright-theme.com/presto/category/entertainment/">Entertainment</a></li>
-				<li><a href="http://demo.bright-theme.com/presto/category/lifestyle/">Lifestyle</a></li>
-				<li><a href="http://demo.bright-theme.com/presto/category/technology/">Technology</a></li>
-				<li>
-					<a href="#">Shortcodes</a>
-					<ul class="sub-menu">
-						<li><a href="http://demo.bright-theme.com/presto/accordion/">Accordion</a></li>
-						<li><a href="http://demo.bright-theme.com/presto/alert/">Alert</a></li>
-						<li><a href="http://demo.bright-theme.com/presto/button/">Button</a></li>
-						<li><a href="http://demo.bright-theme.com/presto/dropcap/">Dropcap</a></li>
-						<li><a href="http://demo.bright-theme.com/presto/google-map/">Google Map</a></li>
-						<li><a href="http://demo.bright-theme.com/presto/list-item/">List Item</a></li>
-						<li><a href="http://demo.bright-theme.com/presto/tabs/">Tabs</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Layout</a>
-					<ul class="sub-menu">
-						<li><a href="?layout=layout-1">Layout 1</a></li>
-						<li><a href="?layout=layout-2">Layout 2</a></li>
-						<li><a href="?layout=layout-3">Layout 3</a></li>
-						<li><a href="?layout=layout-4">Layout 4</a></li>
-						<li><a href="?layout=layout-5">Layout 5</a></li>
-						<li><a href="?layout=layout-6">Layout 6</a></li>
-					</ul>
-				</li>
+				<li class="current-menu-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+				<?php foreach ($array_category as $category) { ?>
+				<li><a href="<?php echo $category['link']; ?>"><?php echo $category['name']; ?></a></li>
+				<?php } ?>
 			</ul>
 			<div class="main-menu-mobile">
 				<div class="placeholder-menu cf">
@@ -77,34 +56,10 @@
 					<span class="icon-arrow-combo mobile-menu-button"></span>
 				</div>
 				<ul id="menu-main-menu-1" class="main-mobile-menu">
-					<li><a href="http://demo.bright-theme.com/presto/">Home</a></li>
-					<li><a href="http://demo.bright-theme.com/presto/category/education/">Education</a></li>
-					<li><a href="http://demo.bright-theme.com/presto/category/entertainment/">Entertainment</a></li>
-					<li><a href="http://demo.bright-theme.com/presto/category/lifestyle/">Lifestyle</a></li>
-					<li><a href="http://demo.bright-theme.com/presto/category/technology/">Technology</a></li>
-					<li>
-						<a href="#">Shortcodes</a>
-						<ul class="sub-menu">
-							<li><a href="http://demo.bright-theme.com/presto/accordion/">Accordion</a></li>
-							<li><a href="http://demo.bright-theme.com/presto/alert/">Alert</a></li>
-							<li><a href="http://demo.bright-theme.com/presto/button/">Button</a></li>
-							<li><a href="http://demo.bright-theme.com/presto/dropcap/">Dropcap</a></li>
-							<li><a href="http://demo.bright-theme.com/presto/google-map/">Google Map</a></li>
-							<li><a href="http://demo.bright-theme.com/presto/list-item/">List Item</a></li>
-							<li><a href="http://demo.bright-theme.com/presto/tabs/">Tabs</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Layout</a>
-						<ul class="sub-menu">
-							<li><a href="?layout=layout-1">Layout 1</a></li>
-							<li><a href="?layout=layout-2">Layout 2</a></li>
-							<li><a href="?layout=layout-3">Layout 3</a></li>
-							<li><a href="?layout=layout-4">Layout 4</a></li>
-							<li><a href="?layout=layout-5">Layout 5</a></li>
-							<li><a href="?layout=layout-6">Layout 6</a></li>
-						</ul>
-					</li>
+					<li><a href="<?php echo base_url(); ?>">Home</a></li>
+					<?php foreach ($array_category as $category) { ?>
+					<li><a href="<?php echo $category['link']; ?>"><?php echo $category['name']; ?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 		</nav>
@@ -166,13 +121,15 @@
 				</div>
 			</div>
 			<div class="social-links fr">
-				<ul>										
+				<ul>
+					<!--
 					<li><a target="_blank" href="http://facebook.com/envato" class="icon-facebook"></a></li>
 					<li><a target="_blank" href="http://twitter.com/envato" class="icon-twitter"></a></li>
 					<li><a target="_blank" href="https://plus.google.com/107285294994146126204" class="icon-gplus"></a></li>
 					<li><a target="_blank" href="http://pinterest.com/envato" class="icon-pinterest"></a></li>
-					<li><a target="_blank" href="http://demo.bright-theme.com/presto/feed/" class="icon-rss"></a></li>									
 					<li><a href="http://demo.bright-theme.com/presto?random=1" class="icon-shuffle"></a></li>
+					-->
+					<li><a target="_blank" href="<?php echo base_url('feed'); ?>" class="icon-rss"></a></li>									
 				</ul>
 			</div>
 		</div>

@@ -49,7 +49,7 @@ class Post_Tag_model extends CI_Model {
 		
 		$string_tag = (!empty($param['tag_id'])) ? "AND PostTag.tag_id = '".$param['tag_id']."'" : '';
 		$string_post = (!empty($param['post_id'])) ? "AND PostTag.post_id = '".$param['post_id']."'" : '';
-		$string_is_publish = (isset($param['is_publish'])) ? "AND Post.post_type_id != '".POST_STATUS_PUBLISH."'" : '';
+		$string_is_publish = (isset($param['is_publish'])) ? "AND Post.post_status_id = '".POST_STATUS_PUBLISH."'" : '';
 		$string_publish_date = (!empty($param['publish_date'])) ? "AND Post.publish_date <= '".$param['publish_date']."'" : '';
 		$string_filter = GetStringFilter($param, @$param['column']);
 		$string_sorting = GetStringSorting($param, @$param['column'], 'Tag.name ASC');

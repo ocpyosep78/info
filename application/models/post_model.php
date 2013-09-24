@@ -59,7 +59,7 @@ class Post_model extends CI_Model {
        
         if (isset($param['id'])) {
             $select_query  = "
-				SELECT Post.*, User.fullname user_fullname, Category.name category_name
+				SELECT Post.*, User.fullname user_fullname, Category.name category_name, Category.alias category_alias
 				FROM ".POST." Post
 				LEFT JOIN ".CATEGORY." Category ON Category.id = Post.category_id
 				LEFT JOIN ".USER." User ON User.id = Post.user_id
@@ -159,13 +159,16 @@ class Post_model extends CI_Model {
 		
 		// desc
 		if (isset($row['desc'])) {
-			$row['desc_limit'] = get_length_char(strip_tags($row['desc']), 250, ' ...');
+			$row['desc_limit'] = get_length_char(strip_tags($row['desc']), 125, ' ...');
 		}
 		
 		// generate link
 		if (isset($row['create_date'])) {
 			$date_temp = preg_replace('/-/i', '/', substr($row['create_date'], 0, 8));
 			$row['post_link'] = base_url($date_temp.$row['alias']);
+		}
+		if (isset($row['category_alias'])) {
+			$row['category_link'] = base_url($row['category_alias']);
 		}
 		
 		if (!empty($row['thumbnail'])) {
@@ -183,8 +186,8 @@ class Post_model extends CI_Model {
 			$image_result = $image_source;
 			$image_small = preg_replace('/\.(jpg|jpeg|png|gif)/i', '_s.$1', $image_result);
 			
-			ImageResize($image_source, $image_small, 194, 123, 1);
-			ImageResize($image_source, $image_result, 600, 374, 1);
+			ImageResize($image_source, $image_small, 120, 80, 1);
+			ImageResize($image_source, $image_result, 280, 180, 1);
 		}
 	}
 	

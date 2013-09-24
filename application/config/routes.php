@@ -13,7 +13,11 @@ if (count($array_arg) >= 1) {
 }
 
 if ($is_website) {
-	
+	$route['(gaya-hidup|hiburan|pendidikan|teknologi)'] = "website/category";
+	$route['(gaya-hidup|hiburan|pendidikan|teknologi)/(:any)'] = "website/category";
+	$route['(:num)/(:num)/(:any)'] = "website/detail";
+	$route['tag'] = "website/tag";
+	$route['tag/(:any)'] = "website/tag";
 } else {
 	$route['panel'] = "panel/home";
 }

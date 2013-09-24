@@ -2643,6 +2643,7 @@
 /* 13. Post Single
 /* ==================================================== */
 	.post-single {}
+	.post-single p { margin: 0px; }
 	.post-single .single-post-title {
 		font-size: 32px;
 		line-height: 1.4em;
@@ -2653,6 +2654,11 @@
 	}
 	.post-single .post-format {
 		margin-bottom: 10px;
+	}
+	.post-single .img-single {
+		float: left;
+		margin-bottom: 5px;
+		padding: 0 10px 0 0;
 	}
 	.post-single .post-body a:hover,
 	.post-single .post-tags a:hover {

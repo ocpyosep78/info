@@ -20,6 +20,9 @@
 		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Status :</div>
 		<div style="float: left; width: 250px;"><div id="post_statusED"></div></div>
 		<div class="clear"></div>
+		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Link Source :</div>
+		<div style="float: left; width: 250px;"><div id="link_sourceED"></div></div>
+		<div class="clear"></div>
 		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Publish Date :</div>
 		<div style="float: left; width: 125px;"><div id="publish_dateED"></div></div>
 		<div style="float: left; width: 120px;"><div id="publish_timeED"></div></div>

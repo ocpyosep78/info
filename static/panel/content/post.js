@@ -199,6 +199,7 @@ Ext.onReady(function() {
 							win.user = Combo.Class.User({ renderTo: 'userED', width: 225, allowBlank: false, blankText: 'Masukkan User' });
 							win.category = Combo.Class.Category({ renderTo: 'categoryED', width: 225, allowBlank: false, blankText: 'Masukkan Kategori' });
 							win.post_status = Combo.Class.PostStatus({ renderTo: 'post_statusED', width: 225, allowBlank: false, blankText: 'Masukkan Status Post', value: page_data.POST_STATUS_PUBLISH });
+							win.link_source = new Ext.form.TextField({ renderTo: 'link_sourceED', width: 225, allowBlank: false, blankText: 'Masukkan Link Sumber' });
 							win.publish_date = new Ext.form.DateField({ renderTo: 'publish_dateED', width: 120, format: DATE_FORMAT, allowBlank: false, blankText: 'Masukkan Tanggal Publish', value: new Date() });
 							win.publish_time = Combo.Class.Time({ renderTo: 'publish_timeED', width: 100, allowBlank: false, blankText: 'Masukkan Jam Publish', value: new Date() });
 							win.create_date = new Ext.form.DateField({ renderTo: 'create_dateED', width: 120, format: DATE_FORMAT, allowBlank: false, blankText: 'Masukkan Tanggal Create', value: new Date() });
@@ -209,11 +210,6 @@ Ext.onReady(function() {
 								window.iframe_thumbnail.browse();
 							} });
 							post_thumbnail = function(p) { win.thumbnail.setValue(p.file_name); }
-			
-			/*
-			'id', 'user_id', 'category_id', 'post_status_id', 'alias', 'name', 'desc', 'thumbnail', 'link_source', 'create_date', 'publish_date',
-			'view_count', 'is_hot', 'is_popular'
-			/*	*/
 							
 							// Populate Record
 							if (param.id > 0) {
@@ -222,6 +218,7 @@ Ext.onReady(function() {
 								win.alias.setValue(param.alias);
 								win.thumbnail.setValue(param.thumbnail);
 								win.category.setValue(param.category_id);
+								win.link_source.setValue(param.link_source);
 								win.post_status.setValue(param.post_status_id);
 								
 								win.publish_date.setValue(Renderer.GetDateFromString.Date(param.publish_date));
@@ -257,6 +254,7 @@ Ext.onReady(function() {
 				ajax.alias = win.alias.getValue();
 				ajax.thumbnail = win.thumbnail.getValue();
 				ajax.category_id = win.category.getValue();
+				ajax.link_source = win.link_source.getValue();
 				ajax.post_status_id = win.post_status.getValue();
 				ajax.tag = win.tag.getValue();
 				
@@ -269,6 +267,9 @@ Ext.onReady(function() {
 					is_valid = false;
 				}
 				if (! win.post_status.validate()) {
+					is_valid = false;
+				}
+				if (! win.link_source.validate()) {
 					is_valid = false;
 				}
 				if (! win.publish_date.validate()) {
