@@ -51,15 +51,15 @@ var Func = {
 		str = '{' + str + '}';
 		return str;
 	},
-	SetValue: function(Param) {
-		// Func.SetValue({ Action : 'City', ForceID: Param.city_id, Combo: WinGateway.city });
+	SetValue: function(p) {
+		// Func.SetValue({ action : 'City', ForceID: p.city_id, Combo: WinGateway.city });
 
 		Ext.Ajax.request({
-			url: Web.HOST + '/index.php/combo',
-			params: { Action : Param.Action, ForceID: Param.ForceID },
+			url: URLS.base + 'panel/combo',
+			params: { action : p.action, force_id: p.ForceID },
 			success: function(Result) {
-				Param.Combo.store.loadData(eval(Result.responseText));
-				Param.Combo.setValue(Param.ForceID);
+				p.Combo.store.loadData(eval(Result.responseText));
+				p.Combo.setValue(p.ForceID);
 			}
 		});
 	},
@@ -260,6 +260,18 @@ var Store = {
 		});
 		return Store;
 	},
+	User: function() {
+		var Store = new Ext.create('Ext.data.Store', {
+			fields: ['id', 'fullname'],
+			autoLoad: true, proxy: {
+				type: 'ajax', extraParams: { action: 'user' },
+				url: URLS.base + 'panel/combo',
+				reader: { type: 'json', root: 'res' },
+				actionMethods: { read: 'POST' }
+			}
+		});
+		return Store;
+	},
 	UserType: function() {
 		var Store = new Ext.create('Ext.data.Store', {
 			fields: ['id', 'name'],
@@ -320,19 +332,19 @@ var Combo = {
 			
 			return p;
 		},
-		FreeText: function(Param) {
-			var p = {
-				xtype: 'combo', store: Store.Agama(), minChars: 1, selectOnFocus: false,
-				triggerAction: 'all', lazyRender: true, typeAhead: true,
-				valueField: 'AgamaID', displayField: 'Agama',
-				readonly: false, editable: true
-			}
+		Time: function(Param) {
+			var p = { xtype: 'timefield', format: TIME_FORMAT, increment: 30 }
 			p = Func.SyncComboParam(p, Param);
 
 			return p;
 		},
-		Time: function(Param) {
-			var p = { xtype: 'timefield', format: TIME_FORMAT, increment: 30 }
+		User: function(Param) {
+			var p = {
+				xtype: 'combo', store: Store.User(), minChars: 1, selectOnFocus: false,
+				triggerAction: 'all', lazyRender: true, typeAhead: true,
+				valueField: 'id', displayField: 'fullname',
+				readonly: false, editable: true
+			}
 			p = Func.SyncComboParam(p, Param);
 
 			return p;
@@ -372,6 +384,10 @@ Combo.Class = {
 	},
 	Time: function(Param) {
 		var c = new Ext.form.field.Time(Combo.Param.Time(Param));
+		return c;
+	},
+	User: function(Param) {
+		var c = new Ext.form.ComboBox(Combo.Param.User(Param));
 		return c;
 	},
 	UserType: function(Param) {

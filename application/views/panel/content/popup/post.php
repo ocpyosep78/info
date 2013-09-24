@@ -11,6 +11,9 @@
 		<div class="clear"></div>
 	</div>
 	<div style="float: left; width: 350px;">
+		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">User :</div>
+		<div style="float: left; width: 250px;"><div id="userED"></div></div>
+		<div class="clear"></div>
 		<div style="float: left; width: 100px; padding: 3px 5px 12px 0; text-align: right;">Category :</div>
 		<div style="float: left; width: 250px;"><div id="categoryED"></div></div>
 		<div class="clear"></div>

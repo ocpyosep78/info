@@ -29,7 +29,7 @@ Ext.onReady(function() {
 					header: 'Judul', dataIndex: 'name', sortable: true, filter: true, width: 200, flex: 1
 			}, {	header: 'User', dataIndex: 'user_fullname', sortable: true, filter: true, width: 100
 			}, {	header: 'Kategori', dataIndex: 'category_name', sortable: true, filter: true, width: 75
-			}, {	header: 'Tipe Status', dataIndex: 'post_status_name', sortable: true, filter: true, width: 75
+			}, {	header: 'Status', dataIndex: 'post_status_name', sortable: true, filter: true, width: 75
 			}, {	header: 'Publish', dataIndex: 'publish_date', sortable: true, filter: true, width: 150, align: 'center'
 			}, {	header: 'Dilihat', dataIndex: 'view_count', sortable: true, filter: true, width: 60, align: 'right'
 			}, {	header: 'Hot', xtype: 'actioncolumn', width: 75, align: 'center',
@@ -196,6 +196,7 @@ Ext.onReady(function() {
 							});
 							win.alias = new Ext.form.TextField({ renderTo: 'aliasED', width: 575 });
 							win.desc = new Ext.form.HtmlEditor({ renderTo: 'descED', width: 575, height: 400, enableFont: false });
+							win.user = Combo.Class.User({ renderTo: 'userED', width: 225, allowBlank: false, blankText: 'Masukkan User' });
 							win.category = Combo.Class.Category({ renderTo: 'categoryED', width: 225, allowBlank: false, blankText: 'Masukkan Kategori' });
 							win.post_status = Combo.Class.PostStatus({ renderTo: 'post_statusED', width: 225, allowBlank: false, blankText: 'Masukkan Status Post', value: page_data.POST_STATUS_PUBLISH });
 							win.publish_date = new Ext.form.DateField({ renderTo: 'publish_dateED', width: 120, format: DATE_FORMAT, allowBlank: false, blankText: 'Masukkan Tanggal Publish', value: new Date() });
@@ -208,6 +209,11 @@ Ext.onReady(function() {
 								window.iframe_thumbnail.browse();
 							} });
 							post_thumbnail = function(p) { win.thumbnail.setValue(p.file_name); }
+			
+			/*
+			'id', 'user_id', 'category_id', 'post_status_id', 'alias', 'name', 'desc', 'thumbnail', 'link_source', 'create_date', 'publish_date',
+			'view_count', 'is_hot', 'is_popular'
+			/*	*/
 							
 							// Populate Record
 							if (param.id > 0) {
@@ -222,6 +228,8 @@ Ext.onReady(function() {
 								win.publish_time.setValue(Renderer.GetDateFromString.Time(param.publish_date));
 								win.create_date.setValue(Renderer.GetDateFromString.Date(param.create_date));
 								win.create_time.setValue(Renderer.GetDateFromString.Time(param.create_date));
+								
+								Func.SetValue({ action : 'user', ForceID: param.user_id, Combo: win.user });
 								
 								// tag
 								if (param.array_tag != null) {
