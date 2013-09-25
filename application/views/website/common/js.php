@@ -1,12 +1,12 @@
-<script type='text/javascript' src='static/js/jquery.carouFredSel.js'></script>
-<script type='text/javascript' src='static/js/jquery.hoverIntent.minified.js'></script>
-<script type='text/javascript' src='static/js/jquery.flexslider-min.js'></script>
-<script type='text/javascript' src='static/js/jquery.ui.core.js'></script>
-<script type='text/javascript' src='static/js/jquery.ui.widget.js'></script>
-<script type='text/javascript' src='static/js/jquery.ui.accordion.js'></script>
-<script type='text/javascript' src='static/js/jquery.ui.tabs.js'></script>
-<script type='text/javascript' src='static/js/jquery.tipsy.js'></script>
-<script type='text/javascript' src='static/js/theme.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.carouFredSel.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.hoverIntent.minified.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.flexslider-min.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.ui.core.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.ui.widget.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.ui.accordion.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.ui.tabs.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.tipsy.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>static/js/theme.js'></script>
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

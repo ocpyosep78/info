@@ -1,3 +1,56 @@
+<?php
+	// latest post
+	$param_latest['is_publish'] = true;
+	$param_latest['publish_date'] = $this->config->item('current_datetime');
+	$param_latest['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
+	$param_latest['limit'] = 10;
+	$array_latest = $this->Post_model->get_array($param_latest);
+	
+	// popular post
+	$param_popular['is_hot'] = 1;
+	$param_popular['is_publish'] = true;
+	$param_popular['publish_date'] = $this->config->item('current_datetime');
+	$param_popular['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
+	$param_popular['limit'] = 5;
+	$array_popular = $this->Post_model->get_array($param_popular);
+	
+	// pendidikan post
+	$param_pendidikan['is_popular'] = 1;
+	$param_pendidikan['category_id'] = CATEGORY_PENDIDIKAN;
+	$param_pendidikan['is_publish'] = true;
+	$param_pendidikan['publish_date'] = $this->config->item('current_datetime');
+	$param_pendidikan['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
+	$param_pendidikan['limit'] = 4;
+	$array_pendidikan = $this->Post_model->get_array($param_pendidikan);
+	
+	// hiburan post
+	$param_hiburan['is_popular'] = 1;
+	$param_hiburan['category_id'] = CATEGORY_HIBURAN;
+	$param_hiburan['is_publish'] = true;
+	$param_hiburan['publish_date'] = $this->config->item('current_datetime');
+	$param_hiburan['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
+	$param_hiburan['limit'] = 4;
+	$array_hiburan = $this->Post_model->get_array($param_hiburan);
+	
+	// gaya post
+	$param_gaya['is_popular'] = 1;
+	$param_gaya['category_id'] = CATEGORY_GAYA_HIDUP;
+	$param_gaya['is_publish'] = true;
+	$param_gaya['publish_date'] = $this->config->item('current_datetime');
+	$param_gaya['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
+	$param_gaya['limit'] = 4;
+	$array_gaya = $this->Post_model->get_array($param_gaya);
+	
+	// teknologi post
+	$param_teknologi['is_popular'] = 1;
+	$param_teknologi['category_id'] = CATEGORY_TEKNOLOGI;
+	$param_teknologi['is_publish'] = true;
+	$param_teknologi['publish_date'] = $this->config->item('current_datetime');
+	$param_teknologi['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
+	$param_teknologi['limit'] = 4;
+	$array_teknologi = $this->Post_model->get_array($param_teknologi);
+?>
+
 <?php $this->load->view( 'website/common/meta.php' ); ?>
 <body class="home blog">
 <div  class="site-wrap layout-3">
@@ -11,106 +64,28 @@
 					<div class="twelve columns"><div class="top-carousel-wrap">
 						<div class="row">
 							<ul id="top-carousel" class="top-carousel">
+								<?php foreach ($array_latest as $row) { ?>
+								<?php if (empty($row['thumbnail_link'])) { continue; } ?>
 								<li class="three columns">
 									<div class="top-carousel-item post-hover-animate">
 										<div class="post-thumbnail mb-10">
-											<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/">
-												<img src="static/upload/file0001545806234-255x160.jpg" alt="" class=""></a>
+											<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>">
+												<img src="<?php echo $row['thumbnail_link']; ?>" alt="<?php echo $row['name']; ?>" class=""></a>
 											<div class="post-thumb-meta">
 												<div class="fl">
-													<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
+													<time class="postmeta-date" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
 												</div>
 												<div class="fr">
-													<span class="postmeta-view"><i class="icon-eye"></i> 2320</span>
-													<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/#comments" class="postmeta-comment"><i class="icon-chat"></i> 7</a>
+													<span class="postmeta-view"><i class="icon-eye"></i> <?php echo $row['view_count']; ?></span>
 												</div>
 											</div>
 										</div>
 										<div class="postmeta mb-5">
-											by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-										<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/" class="top-carousel-title">Top 50 Classic Wedding Songs 222</a>
+											by <a title="Posts by <?php echo $row['user_fullname']; ?>" rel="author"><?php echo $row['user_fullname']; ?></a>										</div>
+										<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>" class="top-carousel-title"><?php echo $row['name']; ?></a>
 									</div>
 								</li>
-								<li class="three columns">
-									<div class="top-carousel-item post-hover-animate">
-										<div class="post-thumbnail mb-10">
-											<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/">
-												<img src="static/upload/file791271781089-255x160.jpg" alt="" class=""></a>
-											<div class="post-thumb-meta">
-												<div class="fl">
-													<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-												</div>
-												<div class="fr">
-													<span class="postmeta-view"><i class="icon-eye"></i> 2484</span>
-													<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/#comments" class="postmeta-comment"><i class="icon-chat"></i> 1</a>
-												</div>
-											</div>
-										</div>
-										<div class="postmeta mb-5">
-											by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-										<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/" class="top-carousel-title">Education Tips: 15 Ideas That Will Encourage Kids to Write</a>
-									</div>
-								</li>
-								<li class="three columns">
-									<div class="top-carousel-item post-hover-animate">
-										<div class="post-thumbnail mb-10">
-											<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/">
-												<img src="static/upload/file0001944433273-255x160.jpg" alt="" class=""></a>
-											<div class="post-thumb-meta">
-												<div class="fl">
-													<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-												</div>
-												<div class="fr">
-													<span class="postmeta-view"><i class="icon-eye"></i> 809</span>
-													<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/#comments" class="postmeta-comment"><i class="icon-chat"></i> 0</a>
-												</div>
-											</div>
-										</div>
-										<div class="postmeta mb-5">
-											by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-										<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/" class="top-carousel-title">Your Money: 13 Money-saving Tips for 2013</a>
-									</div>
-								</li>
-								<li class="three columns">
-									<div class="top-carousel-item post-hover-animate">
-										<div class="post-thumbnail mb-10">
-											<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/">
-												<img src="static/upload/file000786402730-255x160.jpg" alt="" class=""></a>
-											<div class="post-thumb-meta">
-												<div class="fl">
-													<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-												</div>
-												<div class="fr">
-													<span class="postmeta-view"><i class="icon-eye"></i> 637</span>
-													<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/#comments" class="postmeta-comment"><i class="icon-chat"></i> 0</a>
-												</div>
-											</div>
-										</div>
-										<div class="postmeta mb-5">
-											by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-										<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/" class="top-carousel-title">10 Tips for A Better Time Schedule and Management</a>
-									</div>
-								</li>
-								<li class="three columns">
-									<div class="top-carousel-item post-hover-animate">
-										<div class="post-thumbnail mb-10">
-											<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/">
-												<img src="static/upload/file0001941256237-255x160.jpg" alt="" class=""></a>
-											<div class="post-thumb-meta">
-												<div class="fl">
-													<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-												</div>
-												<div class="fr">
-													<span class="postmeta-view"><i class="icon-eye"></i> 511</span>
-													<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/#comments" class="postmeta-comment"><i class="icon-chat"></i> 0</a>
-												</div>
-											</div>
-										</div>
-										<div class="postmeta mb-5">
-											by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-										<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/" class="top-carousel-title">Top 10 Tips For Building Loving Relationships</a>
-									</div>
-								</li>
+								<?php } ?>
 							</ul>
 						</div>
 						<div class="top-carousel-nav">
@@ -161,81 +136,23 @@
 	<div class="post-slider-wrap">
 		<div id="slider-5239546d6e677" class="flexslider post-slider post-slider-1">
 			<ul class="slides">
-				<li data-thumb="static/upload/file0001545806234-110x85.jpg">
-					<img src="static/upload/file0001545806234-620x400.jpg" alt="" class="" />
+				<?php foreach ($array_popular as $row) { ?>
+				<li data-thumb="<?php echo $row['thumbnail_link']; ?>">
+					<img src="<?php echo $row['thumbnail_link']; ?>" alt="<?php echo $row['name']; ?>" class="" />
 					<div class="slider-caption">
-						<h2 class="slider-title"><a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/">Top 50 Classic Wedding Songs</a></h2>
+						<h2 class="slider-title"><a href="<?php echo $row['post_link']; ?>"><?php echo $row['name']; ?></a></h2>
 						<div class="post-slider-meta">
 							<div class="fl">
-								by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a> on <time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
+								by <a title="Posts by <?php echo $row['user_fullname']; ?>" rel="author"><?php echo $row['user_fullname']; ?></a>
+								on <time class="postmeta-date" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
 							</div>
 							<div class="fr">
-								<span class="postmeta-view"><i class="icon-eye"></i> 2320</span>
-								<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/#comments" class="postmeta-comment"><i class="icon-chat"></i> 7</a>
+								<span class="postmeta-view"><i class="icon-eye"></i> <?php echo $row['view_count']; ?></span>
 							</div>
 						</div>
 					</div>
 				</li>
-				<li data-thumb="static/upload/file791271781089-110x85.jpg">
-					<img src="static/upload/file791271781089-620x400.jpg" alt="" class="">
-					<div class="slider-caption">
-						<h2 class="slider-title"><a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/">Education Tips: 15 Ideas That Will Encourage Kids to Write</a></h2>
-						<div class="post-slider-meta">
-							<div class="fl">
-								by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a> on <time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-							</div>
-							<div class="fr">
-								<span class="postmeta-view"><i class="icon-eye"></i> 2484</span>
-								<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/#comments" class="postmeta-comment"><i class="icon-chat"></i> 1</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="static/upload/file0001944433273-110x85.jpg">
-					<img src="static/upload/file0001944433273-620x400.jpg" alt="" class="">
-					<div class="slider-caption">
-						<h2 class="slider-title"><a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/">Your Money: 13 Money-saving Tips for 2013</a></h2>
-						<div class="post-slider-meta">
-							<div class="fl">
-								by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a> on <time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-							</div>
-							<div class="fr">
-								<span class="postmeta-view"><i class="icon-eye"></i> 809</span>
-								<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/#comments" class="postmeta-comment"><i class="icon-chat"></i> 0</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="static/upload/file000786402730-110x85.jpg">
-					<img src="static/upload/file000786402730-620x400.jpg" alt="" class="">
-					<div class="slider-caption">
-						<h2 class="slider-title"><a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/">10 Tips for A Better Time Schedule and Management</a></h2>
-						<div class="post-slider-meta">
-							<div class="fl">
-								by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a> on <time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-							</div>
-							<div class="fr">
-								<span class="postmeta-view"><i class="icon-eye"></i> 637</span>
-								<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/#comments" class="postmeta-comment"><i class="icon-chat"></i> 0</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="static/upload/file0001941256237-110x85.jpg">
-					<img src="static/upload/file0001941256237-620x400.jpg" alt="" class="">
-					<div class="slider-caption">
-						<h2 class="slider-title"><a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/">Top 10 Tips For Building Loving Relationships</a></h2>
-						<div class="post-slider-meta">
-							<div class="fl">
-								by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a> on <time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-							</div>
-							<div class="fr">
-								<span class="postmeta-view"><i class="icon-eye"></i> 511</span>
-								<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/#comments" class="postmeta-comment"><i class="icon-chat"></i> 0</a>
-							</div>
-						</div>
-					</div>
-				</li>
+				<?php } ?>
 			</ul>
 		</div>
 	</div>
@@ -252,127 +169,105 @@
 	</script>
 </div>
 
-<div id="presto-latest-post-2" class="widget widget-latest-post">
-	<div class="widget-title"><h3>Latest News &raquo;</h3></div>
-	<div class="row">
-		<div class="six columns">
-			<article class="post-72 post type-post status-publish format-standard hentry category-entertainment category-lifestyle tag-love tag-song latest-post-item blog-post-item post-hover-animate">
-				<div class="post-thumbnail mb-10">
-					<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/">
-						<img src="static/upload/file0001545806234-280x180.jpg" alt="" class=""></a>
-					<div class="post-thumb-meta">
-						<div class="fl">
-							<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-						</div>
-						<div class="fr">
-							<span class="postmeta-view"><i class="icon-eye"></i> 2320</span>
-							<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/#comments" class="postmeta-comment"><i class="icon-chat"></i> 7</a>
-						</div>
-					</div>
-				</div>
-				<div class="postmeta mb-5">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a></div>
-				<h2 class="post-title"><a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/">Top 50 Classic Wedding Songs</a></h2>
-				<div class="post-excerpt">Hey there where ya goin&#8217;, not exactly knowin&#8217;, who says you have to call just one place home. He&#8217;s goin&#8217; everywhere, B.J. McKay and his&hellip;	</div>
-			</article>
-		</div>
-		<div class="six columns">
-			<article class="post-69 post type-post status-publish format-standard hentry category-education tag-kids tag-write latest-post-item blog-post-item post-hover-animate">
-				<div class="post-thumbnail mb-10">
-					<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/">
-						<img src="static/upload/file791271781089-280x180.jpg" alt="" class=""></a>
-					<div class="post-thumb-meta">
-						<div class="fl">
-							<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-						</div>
-						<div class="fr">
-							<span class="postmeta-view"><i class="icon-eye"></i> 2484</span>
-							<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/#comments" class="postmeta-comment"><i class="icon-chat"></i> 1</a>
+<div id="presto-newsbox-4" class="widget widget-newsbox">
+	<div class="widget-title"><h3>Hiburan &raquo;</h3></div>
+	<div class="newsbox-layout-1">
+		<div class="row">	
+			<div class="six columns">
+				<?php $row = (isset($array_hiburan[0])) ? $array_hiburan[0] : array(); ?>
+				<?php if (count($row) > 0) { ?>
+				<div class="newsbox-post-item post-hover-animate">
+					<div class="post-thumbnail mb-10">
+						<a href="<?php echo $row['post_link']; ?>">
+							<img src="<?php echo $row['thumbnail_link']; ?>" alt="" class=""></a>
+						<div class="post-thumb-meta">
+							<div class="fl">
+								<time class="postmeta-date" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
+							</div>
+							<div class="fr"><span class="postmeta-view"><i class="icon-eye"></i> 735</span></div>
 						</div>
 					</div>
+					<div class="postmeta mb-5">by <a title="Posts by <?php echo $row['user_fullname']; ?>" rel="author"><?php echo $row['user_fullname']; ?></a></div>
+					<h2 class="post-title"><a href="<?php echo $row['post_link']; ?>"><?php echo $row['name']; ?></a></h2>
+					<div class="post-excerpt"><?php echo $row['desc_limit']; ?></div>
 				</div>
-				<div class="postmeta mb-5">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a></div>
-				<h2 class="post-title"><a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/">Education Tips: 15 Ideas That Will Encourage Kids to Write</a></h2>
-				<div class="post-excerpt">Ten years ago a crack commando unit was sent to prison by a military court for a crime they didn&#8217;t commit. These men promptly escaped&hellip;	</div>
-			</article>
+				<?php } ?>
+			</div>
+			<div class="six columns">
+				<ul class="newsbox-list">
+					<?php foreach ($array_hiburan as $key => $row) { ?>
+					<?php if (empty($key)) { continue; } ?>
+					<li>
+						<div class="newsbox-item">
+							<?php if (!empty($row['thumbnail_link'])) { ?>
+							<div class="post-thumbnail">
+								<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>">
+									<img src="<?php echo $row['thumbnail_link']; ?>" alt="<?php echo $row['name']; ?>" class="">
+								</a>
+							</div>
+							<?php } ?>
+							<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>" class="post-title"><?php echo $row['name']; ?></a>
+							<div class="postmeta">
+								by <a class="meta-author"><?php echo $row['user_fullname']; ?></a>
+								on <time class="meta-time" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
+							</div>
+						</div>
+					</li>
+					<?php } ?>
+				</ul>
+			</div>
 		</div>
 	</div>
-	<div class="row"></div>
 </div>
 
 <div id="presto-double-newsbox-list-2" class="widget widget-double-newsbox-list">
 	<div class="row">
 		<div class="six columns">
 			<div class="first-newsbox-list">
-				<div class="widget-title"><h3>Lifestyle &raquo;</h3></div>
+				<div class="widget-title"><h3>Pendidikan &raquo;</h3></div>
 				<ul class="newsbox-list">
+					<?php foreach ($array_pendidikan as $key => $row) { ?>
 					<li>
 						<div class="newsbox-item">
+							<?php if (!empty($row['thumbnail_small_link'])) { ?>
 							<div class="post-thumbnail">
-								<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/">
-									<img src="static/upload/file0001545806234-70x70.jpg" alt="" class=""></a>
+								<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>">
+									<img src="<?php echo $row['thumbnail_small_link']; ?>" alt="<?php echo $row['name']; ?>" class=""></a>
 							</div>
-							<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/" class="post-title">Top 50 Classic Wedding Songs</a>
-							<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time></div>
+							<?php } ?>
+							<a href="<?php echo $row['post_link']; ?>" class="post-title" title="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a>
+							<div class="postmeta">
+								by <a class="meta-author"><?php echo $row['user_fullname']; ?></a>
+								on <time class="meta-time" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
+							</div>
 						</div>
 					</li>
-					<li>
-						<div class="newsbox-item">
-							<div class="post-thumbnail">
-								<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/">
-									<img src="static/upload/file0001944433273-70x70.jpg" alt="" class=""></a>
-							</div>
-							<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/" class="post-title">Your Money: 13 Money-saving Tips for 2013</a>
-							<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time></div>
-						</div>
-					</li>
-					<li>
-						<div class="newsbox-item">
-							<div class="post-thumbnail">
-								<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/">
-									<img src="static/upload/file000786402730-70x70.jpg" alt="" class=""></a>
-							</div>
-							<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/" class="post-title">10 Tips for A Better Time Schedule and Management</a>
-							<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-						</div>
-					</li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>
 		
 		<div class="six columns">
 			<div class="first-newsbox-list">
-				<div class="widget-title"><h3>Tech &amp; Innovation &raquo;</h3></div>
+				<div class="widget-title"><h3>Gaya Hidup &raquo;</h3></div>
 				<ul class="newsbox-list">
+					<?php foreach ($array_gaya as $key => $row) { ?>
 					<li>
 						<div class="newsbox-item">
+							<?php if (!empty($row['thumbnail_small_link'])) { ?>
 							<div class="post-thumbnail">
-								<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/">
-									<img src="static/upload/file000970069370-70x70.jpg" alt="" class=""></a>
+								<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>">
+									<img src="<?php echo $row['thumbnail_small_link']; ?>" alt="<?php echo $row['name']; ?>" class=""></a>
 							</div>
-							<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/" class="post-title">News Portal Apps for Your Android Gadgets</a>
-							<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
+							<?php } ?>
+							<a href="<?php echo $row['post_link']; ?>" class="post-title" title="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a>
+							<div class="postmeta">
+								by <a class="meta-author"><?php echo $row['user_fullname']; ?></a>
+								on <time class="meta-time" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
+							</div>
 						</div>
 					</li>
-					<li>
-						<div class="newsbox-item">
-							<div class="post-thumbnail">
-								<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/">
-									<img src="static/upload/file2811310649672-70x70.jpg" alt="" class=""></a>
-							</div>
-							<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/" class="post-title">Simplify Your Responsive Design Workflow With Screensiz.es</a>
-							<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-						</div>
-					</li>
-					<li>
-						<div class="newsbox-item">
-							<div class="post-thumbnail">
-								<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/">
-									<img src="static/upload/file6681269982727-70x70.jpg" alt="" class=""></a>
-							</div>
-							<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/" class="post-title">11 Tips for Developing a Mobile App that Users will Love</a>
-							<div class="postmeta">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-						</div>
-					</li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>
@@ -513,56 +408,51 @@
 </div>
 
 <div id="presto-newsbox-3" class="widget widget-newsbox">
-	<div class="widget-title"><h3>Technology &raquo;</h3></div>
+	<div class="widget-title"><h3>Teknologi &raquo;</h3></div>
 	<div class="newsbox-layout-1">
 		<div class="row">	
 			<div class="six columns">
+				<?php $row = (isset($array_teknologi[0])) ? $array_teknologi[0] : array(); ?>
+				<?php if (count($row) > 0) { ?>
 				<div class="newsbox-post-item post-hover-animate">
 					<div class="post-thumbnail mb-10">
-						<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/">
-							<img src="static/upload/file000970069370-280x180.jpg" alt="" class=""></a>
+						<a href="<?php echo $row['post_link']; ?>">
+							<img src="<?php echo $row['thumbnail_link']; ?>" alt="" class=""></a>
 						<div class="post-thumb-meta">
 							<div class="fl">
-								<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
+								<time class="postmeta-date" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
 							</div>
-							<div class="fr">
-								<span class="postmeta-view"><i class="icon-eye"></i> 735</span>
-								<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/#comments" class="postmeta-comment"><i class="icon-chat"></i> 2</a>
-							</div>
+							<div class="fr"><span class="postmeta-view"><i class="icon-eye"></i> 735</span></div>
 						</div>
 					</div>
-					<div class="postmeta mb-5">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>						</div>
-					<h2 class="post-title"><a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/">News Portal Apps for Your Android Gadgets</a></h2>
-					<div class="post-excerpt">Ten years ago a crack commando unit was sent to prison by a military court for a crime they didn&#8217;t commit. These men promptly escaped from a maximum security stockade&hellip;</div>
+					<div class="postmeta mb-5">by <a title="Posts by <?php echo $row['user_fullname']; ?>" rel="author"><?php echo $row['user_fullname']; ?></a></div>
+					<h2 class="post-title"><a href="<?php echo $row['post_link']; ?>"><?php echo $row['name']; ?></a></h2>
+					<div class="post-excerpt"><?php echo $row['desc_limit']; ?></div>
 				</div>
+				<?php } ?>
 			</div>
 			<div class="six columns">
-				
-				<ul class="newsbox-list"><li><div class="newsbox-item">
-	<div class="post-thumbnail">
-	<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/">
-		<img src="static/upload/file2811310649672-70x70 (1).jpg" alt="" class=""></a>
-</div>
-	<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/" class="post-title">Simplify Your Responsive Design Workflow With Screensiz.es</a>
-<div class="postmeta">
-	by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-</div></li><li><div class="newsbox-item">
-	<div class="post-thumbnail">
-	<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/">
-		<img src="static/upload/file6681269982727-70x70.jpg" alt="" class=""></a>
-</div>
-	<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/" class="post-title">11 Tips for Developing a Mobile App that Users will Love</a>
-<div class="postmeta">
-	by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-</div></li><li><div class="newsbox-item">
-	<div class="post-thumbnail">
-	<a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/">
-		<img src="static/upload/file5901240433821-70x70.jpg" alt="" class=""></a>
-</div>
-	<a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/" class="post-title">Samsung Premiere 2013 Will Unveil New Galaxy and ATIV Devices</a>
-<div class="postmeta">
-	by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a> on <time class="meta-time" datetime="2013-05-28">May 28, 2013</time>	</div>
-</div></li></ul>
+				<ul class="newsbox-list">
+					<?php foreach ($array_teknologi as $key => $row) { ?>
+					<?php if (empty($key)) { continue; } ?>
+					<li>
+						<div class="newsbox-item">
+							<?php if (!empty($row['thumbnail_link'])) { ?>
+							<div class="post-thumbnail">
+								<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>">
+									<img src="<?php echo $row['thumbnail_link']; ?>" alt="<?php echo $row['name']; ?>" class="">
+								</a>
+							</div>
+							<?php } ?>
+							<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>" class="post-title"><?php echo $row['name']; ?></a>
+							<div class="postmeta">
+								by <a class="meta-author"><?php echo $row['user_fullname']; ?></a>
+								on <time class="meta-time" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
+							</div>
+						</div>
+					</li>
+					<?php } ?>
+				</ul>
 			</div>
 		</div>
 	</div>

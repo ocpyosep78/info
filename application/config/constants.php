@@ -20,6 +20,11 @@ define('POST_STATUS_PUBLISH',					2);
 define('USER_TYPE_ADMINISTRATOR',				1);
 define('USER_TYPE_MEMBER',						2);
 
+define('CATEGORY_PENDIDIKAN',					1);
+define('CATEGORY_HIBURAN',						2);
+define('CATEGORY_GAYA_HIDUP',					3);
+define('CATEGORY_TEKNOLOGI',					4);
+
 define('CATEGORY',								'category');
 define('CONTACT',								'contact');
 define('PAGE_STATIC',							'page_static');

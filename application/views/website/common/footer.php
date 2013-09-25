@@ -16,7 +16,7 @@
 		<div class="three columns footer-widget-area-1">
 			<div id="text-2" class="widget widget_text">
 				<div class="textwidget">
-					<img src="<?php echo base_url(); ?>/static/img/ig_logo.gif" alt=""><br>
+					<img src="<?php echo base_url(); ?>static/img/ig_logo.gif" alt=""><br>
 					<strong>Infogue</strong> adalah web site yang berisi informasi dari segala bidang kebutuhan ilmu pengetahuan dan hiburan (movie dan game) yang dikumpulkan berdasarkan dari info-info trendy, popular, dan selalu update untuk dinikmati semua kalangan netter-netter mania.
 				</div>
 			</div>

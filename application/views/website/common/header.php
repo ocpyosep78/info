@@ -32,10 +32,10 @@
 <div class="main-header row">
 	<div class="twelve columns">
 		<div class="logo fl">
-			<a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>/static/img/ig_logo.gif" alt="Infogue"></a>
+			<a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>static/img/ig_logo.gif" alt="Infogue"></a>
 		</div>
 		<div class="header-ads fr">
-			<a target="_blank" rel="nofollow"><img src="<?php echo base_url(); ?>/static/upload/tutorials_728x90_v2.gif" alt=""></a>
+			<a target="_blank" rel="nofollow"><img src="<?php echo base_url(); ?>static/upload/tutorials_728x90_v2.gif" alt=""></a>
 		</div>
 	</div>
 </div>

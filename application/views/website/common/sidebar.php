@@ -1,3 +1,13 @@
+<?php
+	// random post
+	$param_random['is_hot'] = 1;
+	$param_random['is_publish'] = true;
+	$param_random['publish_date'] = $this->config->item('current_datetime');
+	$param_random['sort'] = '{"is_custom":"1","query":"RAND()"}';
+	$param_random['limit'] = 6;
+	$array_random = $this->Post_model->get_array($param_random);
+?>
+
 <div class="primary-sidebar">
 	<div id="search-3" class="widget widget_search">
 		<form method="get" id="searchform" class="searchform" action="http://demo.bright-theme.com/presto/" role="search">
@@ -185,36 +195,20 @@
 </div>
 
 <div class="secondary-sidebar">
-	<div id="presto-recent-random-posts-2" class="widget widget-latest-post-vertical"><div class="widget-title"><h3>Random &raquo;</h3></div>
+	<div id="presto-recent-random-posts-2" class="widget widget-latest-post-vertical">
+		<div class="widget-title"><h3>Random &raquo;</h3></div>
 		<ul class="latest-post-vertical">
-						<li>
-				<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/" class="post-title">News Portal Apps for Your Android Gadgets</a> <span class="post-time">(4 months ago)</span>
-				<div class="postmeta">
-					by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a>				</div>
+			<?php foreach ($array_random as $key => $row) { ?>
+			<li>
+				<div><a href="<?php echo $row['post_link']; ?>" class="post-title" title="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a></div>
+				<span class="post-time"><?php echo GetFormatDate($row['publish_date']); ?></span>
+				<div class="postmeta">by <a class="meta-author"><?php echo $row['user_fullname']; ?></a></div>
 			</li>
-						<li>
-				<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/" class="post-title">Simplify Your Responsive Design Workflow With Screensiz.es</a> <span class="post-time">(4 months ago)</span>
-				<div class="postmeta">
-					by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a>				</div>
-			</li>
-						<li>
-				<a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/" class="post-title">Samsung Premiere 2013 Will Unveil New Galaxy and ATIV Devices</a> <span class="post-time">(4 months ago)</span>
-				<div class="postmeta">
-					by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a>				</div>
-			</li>
-						<li>
-				<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/" class="post-title">Top 50 Classic Wedding Songs</a> <span class="post-time">(4 months ago)</span>
-				<div class="postmeta">
-					by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a>				</div>
-			</li>
-						<li>
-				<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/" class="post-title">Your Money: 13 Money-saving Tips for 2013</a> <span class="post-time">(4 months ago)</span>
-				<div class="postmeta">
-					by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" class="meta-author">Iskandar</a>				</div>
-			</li>
-					</ul>
-
-		</div><div id="presto-ads-160x600-2" class="widget widget-ads-160x600"><div class="widget-title"><h3>160&#215;600 Ads &raquo;</h3></div><div class="ads-block">
+			<?php } ?>
+		</ul>
+	</div>
+		
+		<div id="presto-ads-160x600-2" class="widget widget-ads-160x600"><div class="widget-title"><h3>160&#215;600 Ads &raquo;</h3></div><div class="ads-block">
 		<a href="#" target="_blank" rel="nofollow"><img src="static/upload/ffffff.gif" alt=""></a></div></div><div id="categories-3" class="widget widget_categories"><div class="widget-title"><h3>Categories &raquo;</h3></div>		<ul>
 	<li class="cat-item cat-item-15"><a href="http://demo.bright-theme.com/presto/category/education/" title="View all posts filed under Education">Education</a> (1)
 </li>

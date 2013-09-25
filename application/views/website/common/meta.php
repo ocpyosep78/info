@@ -20,19 +20,19 @@
 	<title><?php echo htmlspecialchars($title); ?></title>
 	
 	<link rel="shortcut icon" href="<?php echo base_url(); ?>static/img/favicon.ico">
-	<link rel="alternate" type="application/rss+xml" title="Infogue Feed" href="<?php echo base_url(); ?>/rss/" />
-	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>/static/css/tp_twitter_plugin.css' />
-	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>/static/css/fontello.css' />
-	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>/static/css/base.css' />
-	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>/static/css/responsive.css' />
-	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>/static/css/default.css' />
-	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>/static/css/presto-custom.css' />
+	<link rel="alternate" type="application/rss+xml" title="Infogue Feed" href="<?php echo base_url(); ?>rss/" />
+	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>static/css/tp_twitter_plugin.css' />
+	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>static/css/fontello.css' />
+	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>static/css/base.css' />
+	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>static/css/responsive.css' />
+	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>static/css/default.css' />
+	<link rel='stylesheet' type='text/css' media='screen' href='<?php echo base_url(); ?>static/css/presto-custom.css' />
 	<script> var web = <?php echo json_encode($web); ?></script>
-	<script type='text/javascript' src='<?php echo base_url(); ?>/static/js/jquery.js'></script>
-	<script type='text/javascript' src='<?php echo base_url(); ?>/static/js/jquery-migrate.min.js'></script>
+	<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.js'></script>
+	<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery-migrate.min.js'></script>
 	
 	<!--[if lt IE 9]>
-	<script type='text/javascript' src='<?php echo base_url(); ?>/static/js/html5.js'></script>
-	<script type='text/javascript' src='<?php echo base_url(); ?>/static/js/respond.min.js'></script>
+	<script type='text/javascript' src='<?php echo base_url(); ?>static/js/html5.js'></script>
+	<script type='text/javascript' src='<?php echo base_url(); ?>static/js/respond.min.js'></script>
 	<![endif]-->
 </head>
