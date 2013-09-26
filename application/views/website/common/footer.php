@@ -43,13 +43,13 @@
 			<div id="presto-links-2" class="widget widget-links">
 				<div class="widget-title"><h3>Informasi Lainnya &raquo;</h3></div>
 				<ul>
-					<li><a href="http://bright-theme.com" rel="nofollow" target="_blank">Bright Theme</a></li>
-					<li><a href="http://themeforest.net" rel="nofollow" target="_blank">Theme Forest</a></li>
-					<li><a href="http://webdesign.tutsplus.com" rel="nofollow" target="_blank">Web Design Tuts+</a></li>
-					<li><a href="http://smashingmagazine.com" rel="nofollow" target="_blank">Smashing Magazine</a></li>
-					<li><a href="http://pixeden.com" rel="nofollow" target="_blank">Pixeden</a></li>
-					<li><a href="http://codex.wordpress.org" rel="nofollow" target="_blank">WordPress Codex</a></li>
-					<li><a href="http://wordpress.org" rel="nofollow" target="_blank">WordPress</a></li>
+					<li><a href="#" rel="nofollow" target="_blank">Bright Theme</a></li>
+					<li><a href="#" rel="nofollow" target="_blank">Theme Forest</a></li>
+					<li><a href="#" rel="nofollow" target="_blank">Web Design Tuts+</a></li>
+					<li><a href="#" rel="nofollow" target="_blank">Smashing Magazine</a></li>
+					<li><a href="#" rel="nofollow" target="_blank">Pixeden</a></li>
+					<li><a href="#" rel="nofollow" target="_blank">WordPress Codex</a></li>
+					<li><a href="#" rel="nofollow" target="_blank">WordPress</a></li>
 				</ul>
 			</div>
 		</div>

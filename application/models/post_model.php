@@ -93,6 +93,7 @@ class Post_model extends CI_Model {
 		
 		$string_is_hot = (isset($param['is_hot'])) ? "AND Post.is_hot = '".$param['is_hot']."'" : '';
 		$string_is_popular = (!empty($param['is_popular'])) ? "AND Post.is_popular = '1'" : '';
+		$string_is_picture = (!empty($param['is_picture'])) ? "AND Post.thumbnail != ''" : '';
 		$string_month = (isset($param['month'])) ? "AND MONTH(Post.create_date) = '".$param['month']."'" : '';
 		$string_year = (isset($param['year'])) ? "AND YEAR(Post.create_date) = '".$param['year']."'" : '';
 		$string_namelike = (!empty($param['namelike'])) ? "AND Post.name LIKE '%".$param['namelike']."%'" : '';
@@ -112,7 +113,7 @@ class Post_model extends CI_Model {
 			LEFT JOIN ".CATEGORY." Category ON Category.id = Post.category_id
 			LEFT JOIN ".POST_STATUS." PostStatus ON PostStatus.id = Post.post_status_id
 			WHERE 1
-				$string_is_hot $string_is_popular $string_month $string_year $string_namelike
+				$string_is_hot $string_is_popular $string_is_picture $string_month $string_year $string_namelike
 				$string_category $string_max_id $string_is_publish $string_publish_date $string_filter
 			ORDER BY $string_sorting
 			LIMIT $string_limit
