@@ -41,26 +41,19 @@
 		</form>
 	</div>
 	
-	<div id="presto-ads-300x250-4" class="widget widget-ads-300x250">
-		<div class="ads-block">
-			<script type="text/javascript">
-			google_ad_client = "ca-pub-0445723121454332";
-			/* Basic */
-			google_ad_slot = "5061721949";
-			google_ad_width = 300;
-			google_ad_height = 250;
-			</script>
-			<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-		</div>
-	</div>
-	
 	<div id="presto-ads-300x250-2" class="widget widget-ads-300x250">
 		<div class="ads-block">
-			<script type="text/javascript">
-			var placementId = "4619716";
-			var sizeId = "170"; 
-			</script><script type="text/javascript" language="javascript" src="http://adr.adplus.co.id/script/adt.js"></script><noscript><a href="http://adsrv.adplus.co.id/adlink/3.0/1336/4619716/0/170/ADTECH;loc=300" target="_blank"><img src="http://adsrv.adplus.co.id/adserv/3.0/1336/4619716/0/170/ADTECH;loc=300" border="0" width="300" height="250">
-			</a></noscript>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-0445723121454332";
+/* Basic */
+google_ad_slot = "5061721949";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 		</div>
 	</div>
 	
@@ -70,6 +63,16 @@
 			document.write('<scr'+'ipt language="javascript1.1" src="http://adserver.adtech.de/addyn/3.0/1353/4089427/0/170/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;misc='+new Date().getTime()+'"></scri'+'pt>');
 			</script>
 			<noscript><a href="http://adserver.adtech.de/adlink/3.0/1353/4089427/0/170/ADTECH;loc=300;key=key1+key2+key3+key4" target="_blank"><img src="http://adserver.adtech.de/adserv/3.0/1353/4089427/0/170/ADTECH;loc=300;key=key1+key2+key3+key4" border="0" width="300" height="250"></a></noscript>
+		</div>
+	</div>
+	
+	<div id="presto-ads-300x250-4" class="widget widget-ads-300x250">
+		<div class="ads-block">
+			<script type="text/javascript">
+			var placementId = "4619716";
+			var sizeId = "170"; 
+			</script><script type="text/javascript" language="javascript" src="http://adr.adplus.co.id/script/adt.js"></script><noscript><a href="http://adsrv.adplus.co.id/adlink/3.0/1336/4619716/0/170/ADTECH;loc=300" target="_blank"><img src="http://adsrv.adplus.co.id/adserv/3.0/1336/4619716/0/170/ADTECH;loc=300" border="0" width="300" height="250">
+			</a></noscript>
 		</div>
 	</div>
 	
