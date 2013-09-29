@@ -184,7 +184,7 @@
 							<div class="fl">
 								<time class="postmeta-date" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
 							</div>
-							<div class="fr"><span class="postmeta-view"><i class="icon-eye"></i> 735</span></div>
+							<div class="fr"><span class="postmeta-view"><i class="icon-eye"></i> <?php echo $row['view_count']; ?></span></div>
 						</div>
 					</div>
 					<div class="postmeta mb-5">by <a title="Posts by <?php echo $row['user_fullname']; ?>" rel="author"><?php echo $row['user_fullname']; ?></a></div>
@@ -274,139 +274,6 @@
 	</div>
 </div>
 
-<div id="presto-newsbox-carousel-2" class="widget widget-newsbox-carousel">
-	<div class="widget-title cf">
-		<div class="fl"><h3> News Carousel &raquo;</h3></div>
-		<div class="fr">
-			<div class="newsbox-carousel-navigation">
-				<a id="newsbox-carousel-5239546d8171c-prev" href="" class="newsbox-carousel-prev"><i class="icon-left-open"></i></a>
-				<a id="newsbox-carousel-5239546d8171c-next" href="" class="newsbox-carousel-next"><i class="icon-right-open"></i></a>
-			</div>
-		</div>
-	</div>
-	
-	<div class="newsbox-carousel">
-		<div class="row"><div class="twelve columns"><div class="newsbox-carousel-inner"><div class="row">
-			<ul id="newsbox-carousel-5239546d8171c">
-				<li class="four columns">
-					<article class="post-32 post type-post status-publish format-standard hentry category-technology tag-apps tag-mobile newsbox-carousel-item post-hover-animate">
-						<div class="post-thumbnail mb-10">
-							<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/">
-								<img src="static/upload/file000970069370-176x110.jpg" alt="" class=""></a>
-							<div class="post-thumb-meta">
-								<div class="fl">
-									<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-								</div>
-								<div class="fr">
-									<span class="postmeta-view"><i class="icon-eye"></i> 735</span>
-									<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/#comments" class="postmeta-comment"><i class="icon-chat"></i> 2</a>
-								</div>
-							</div>
-						</div>
-						<div class="postmeta mb-5">by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-						<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/" class="newsbox-carousel-title">News Portal Apps for Your Android Gadgets</a>
-					</article>
-				</li>
-				<li class="four columns">
-					<article class="post-27 post type-post status-publish format-standard hentry category-technology tag-gadget tag-responsive newsbox-carousel-item post-hover-animate">
-						<div class="post-thumbnail mb-10">
-							<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/">
-								<img src="static/upload/file2811310649672-176x110.jpg" alt="" class=""></a>
-							<div class="post-thumb-meta">
-								<div class="fl">
-									<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-								</div>
-								<div class="fr">
-									<span class="postmeta-view"><i class="icon-eye"></i> 691</span>
-									<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/#comments" class="postmeta-comment"><i class="icon-chat"></i> 1</a>
-								</div>
-							</div>
-						</div>
-						<div class="postmeta mb-5">
-							by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-						<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/" class="newsbox-carousel-title">Simplify Your Responsive Design Workflow With Screensiz.es</a>
-					</article>
-				</li>
-				<li class="four columns">
-					<article class="post-22 post type-post status-publish format-standard hentry category-technology tag-apps tag-mobile newsbox-carousel-item post-hover-animate">
-						<div class="post-thumbnail mb-10">
-							<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/">
-								<img src="static/upload/file6681269982727-176x110.jpg" alt="" class=""></a>
-							<div class="post-thumb-meta">
-								<div class="fl">
-									<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-								</div>
-								<div class="fr">
-									<span class="postmeta-view"><i class="icon-eye"></i> 447</span>
-									<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/#comments" class="postmeta-comment"><i class="icon-chat"></i> 0</a>
-								</div>
-							</div>
-						</div>
-						<div class="postmeta mb-5">
-							by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-						<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/" class="newsbox-carousel-title">11 Tips for Developing a Mobile App that Users will Love</a>
-					</article>
-				</li>
-				<li class="four columns">
-					<article class="post-18 post type-post status-publish format-standard hentry category-technology tag-gadget tag-mobile newsbox-carousel-item post-hover-animate">
-						<div class="post-thumbnail mb-10">
-							<a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/">
-								<img src="static/upload/file5901240433821-176x110.jpg" alt="" class=""></a>
-							<div class="post-thumb-meta">
-								<div class="fl">
-									<time class="postmeta-date" datetime="2013-05-28">May 28, 2013</time>
-								</div>
-								<div class="fr">
-									<span class="postmeta-view"><i class="icon-eye"></i> 1062</span>
-									<a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/#comments" class="postmeta-comment"><i class="icon-chat"></i> 0</a>
-								</div>
-							</div>
-						</div>
-						<div class="postmeta mb-5">
-							by <a href="http://demo.bright-theme.com/presto/author/Iskandar/" title="Posts by Iskandar" rel="author">Iskandar</a>										</div>
-						<a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/" class="newsbox-carousel-title">Samsung Premiere 2013 Will Unveil New Galaxy and ATIV Devices</a>
-					</article>
-				</li>
-			</ul>
-		</div></div></div></div>
-	</div>
-	<script type="text/javascript">
-	jQuery(document).ready(function(){
-		var carousel = jQuery("#newsbox-carousel-5239546d8171c");
-		carousel.carouFredSel({
-			responsive	: true,
-			circular 	: false,
-			infinite 	: false,
-			prev 		: '#newsbox-carousel-5239546d8171c-prev',
-			next 		: '#newsbox-carousel-5239546d8171c-next',
-			height 		: "auto",
-			width 		: "100%",
-			auto 		: false,	
-			scroll		: 1,								
-			duration 	: 1000,
-				items 		: {
-					visible	: {
-						min : 1,
-						max : 3
-						},
-					width 	: 193				
-				}, 
-			onCreate 	: function(){
-
-				jQuery(window).on('load', function(){
-					carousel.parent().add(carousel).css({
-						'height': Math.max.apply(Math, carousel.children().map(function(){ return jQuery(this).height(); }).get()) + 'px'});
-				}).trigger('load');
-
-				jQuery(window).on('resize', function(){
-					carousel.parent().add(carousel).css('height', Math.max.apply(Math, carousel.children().map(function(){ return jQuery(this).height(); }).get()) + 'px');
-				}).trigger('resize');
-			}
-		});
-	});
-	</script>
-</div>
-
 <div id="presto-newsbox-3" class="widget widget-newsbox">
 	<div class="widget-title"><h3>Teknologi &raquo;</h3></div>
 	<div class="newsbox-layout-1">
@@ -422,7 +289,7 @@
 							<div class="fl">
 								<time class="postmeta-date" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
 							</div>
-							<div class="fr"><span class="postmeta-view"><i class="icon-eye"></i> 735</span></div>
+							<div class="fr"><span class="postmeta-view"><i class="icon-eye"></i> <?php echo $row['view_count']; ?></span></div>
 						</div>
 					</div>
 					<div class="postmeta mb-5">by <a title="Posts by <?php echo $row['user_fullname']; ?>" rel="author"><?php echo $row['user_fullname']; ?></a></div>

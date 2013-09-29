@@ -8,12 +8,16 @@
 	$category = $this->Category_model->get_by_id(array( 'alias' => $category_alias ));
 	
 	// page base (page + category) => soon support latest & popular
-	$page_base  = $category['link'];
+	if (count($category) == 0) {
+		$page_base = base_url('semua');
+	} else {
+		$page_base = $category['link'];
+	}
 	
 	// post
 	$param_post['is_publish'] = true;
 	$param_post['publish_date'] = $this->config->item('current_datetime');
-	$param_post['category_id'] = $category['id'];
+	$param_post['category_id'] = (count($category) > 0) ? $category['id'] : '';
 	$param_post['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
 	$param_post['start'] = ($page_active - 1) * $page_item;
 	$param_post['limit'] = $page_item;
@@ -32,7 +36,7 @@
 
 <div class="widget widget-archive widget-search">
 	<div class="archive-title">
-		<h3>Kategori: <span><?php echo $category['name']; ?></span></h3>
+		<h3>Kategori: <span><?php echo (empty($category['name']) ? 'Semua' : $category['name']); ?></span></h3>
 	</div>
 	
 	<div class="search-posts">

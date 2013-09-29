@@ -57,11 +57,15 @@
 	
 	<?php if (count($post['array_tag']) > 0) { ?>
 	<div class="tagcloud cf">
+		<div style="float: left; padding: 2px 5px 0 0;">Tag :</div>
 		<?php foreach ($post['array_tag'] as $tag) { ?>
 		<a href="<?php echo $tag['tag_link']; ?>" rel="tag"><?php echo $tag['tag_name']; ?></a>
 		<?php } ?>
+		<div style="clear: both;"></div>
 	</div>
 	<?php } ?>
+	
+	<a href="<?php echo $post['post_link']; ?>" style="text-align: center; display: block;" target="_blank" class="button button-red" rel="nofollow">Lihat Sumber</a>
 </article>
 
 <!--

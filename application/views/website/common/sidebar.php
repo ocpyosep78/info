@@ -41,6 +41,7 @@
 		</form>
 	</div>
 	
+	<?php if ($this->config->item('online_widget')) { ?>
 	<div id="presto-ads-300x250-2" class="widget widget-ads-300x250">
 		<div class="ads-block">
 <script type="text/javascript"><!--
@@ -56,7 +57,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 		</div>
 	</div>
+	<?php } ?>
 	
+	<?php if ($this->config->item('online_widget')) { ?>
 	<div id="presto-ads-300x250-3" class="widget widget-ads-300x250">
 		<div class="ads-block">
 			<script language="javascript">
@@ -65,7 +68,9 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 			<noscript><a href="http://adserver.adtech.de/adlink/3.0/1353/4089427/0/170/ADTECH;loc=300;key=key1+key2+key3+key4" target="_blank"><img src="http://adserver.adtech.de/adserv/3.0/1353/4089427/0/170/ADTECH;loc=300;key=key1+key2+key3+key4" border="0" width="300" height="250"></a></noscript>
 		</div>
 	</div>
+	<?php } ?>
 	
+	<?php if ($this->config->item('online_widget')) { ?>
 	<div id="presto-ads-300x250-4" class="widget widget-ads-300x250">
 		<div class="ads-block">
 			<script type="text/javascript">
@@ -75,6 +80,7 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 			</a></noscript>
 		</div>
 	</div>
+	<?php } ?>
 	
 	<div id="presto-tabber-2" class="widget widget-tabber">
 		<div class="tabs tabber">
@@ -175,6 +181,8 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 		</div>
 	</div>
 	
+	<!--
+	
 	<div id="categories-3" class="widget widget_categories">
 		<div class="widget-title"><h3>Categories &raquo;</h3></div>
 		<ul>
@@ -190,5 +198,5 @@ src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 			<li><a href="<?php echo base_url(); ?>feed" title="RSS"><abbr title="Infogue RSS">RSS</abbr></a></li>
 		</ul>
 	</div>
+	-->
 </div>
-			

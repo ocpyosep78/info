@@ -13,11 +13,16 @@ if (count($array_arg) >= 1) {
 }
 
 if ($is_website) {
-	$route['(gaya-hidup|hiburan|pendidikan|teknologi)'] = "website/category";
-	$route['(gaya-hidup|hiburan|pendidikan|teknologi)/(:any)'] = "website/category";
+	$route['(semua|gaya-hidup|hiburan|pendidikan|teknologi)'] = "website/category";
+	$route['(semua|gaya-hidup|hiburan|pendidikan|teknologi)/(:any)'] = "website/category";
 	$route['(:num)/(:num)/(:any)'] = "website/detail";
+	$route['rss'] = "website/rss";
 	$route['tag'] = "website/tag";
 	$route['tag/(:any)'] = "website/tag";
+	$route['login'] = "website/login";
+	$route['logout'] = "website/logout";
+	$route['submit'] = "website/submit";
+	$route['register'] = "website/register";
 } else {
 	$route['panel'] = "panel/home";
 }

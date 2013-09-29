@@ -1,23 +1,31 @@
 <?php
+	// array category
 	$array_category = $this->Category_model->get_array();
+	
+	// latest post
+	$param_post['is_publish'] = true;
+	$param_post['publish_date'] = $this->config->item('current_datetime');
+	$param_post['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
+	$param_post['limit'] = 5;
+	$array_post = $this->Post_model->get_array($param_post);
 ?>
 <header class="site-header">
 <div class="top-bar row">
 	<div class="twelve columns">
 		<nav class="top-navigation fl">
 			<ul id="menu-top-menu" class="top-menu">
-				<li><a href="#">Full Width</a></li>
-				<li><a href="#">RTL</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Review Post</a></li>
+				<li><a href="<?php echo base_url('login'); ?>">Login</a></li>
+				<li><a href="<?php echo base_url('register'); ?>">Register</a></li>
+				<li><a href="<?php echo base_url('submit'); ?>">Submit</a></li>
+				<li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
 			</ul>
 			<div class="top-menu-mobile">
 				<span class="icon-menu"></span>
 				<ul id="menu-top-menu-1" class="top-mobile-menu">
-					<li><a href="#">Full Width</a></li>
-					<li><a href="#">RTL</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Review Post</a></li>
+					<li><a href="<?php echo base_url('login'); ?>">Login</a></li>
+					<li><a href="<?php echo base_url('register'); ?>">Register</a></li>
+					<li><a href="<?php echo base_url('submit'); ?>">Submit</a></li>
+					<li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -45,6 +53,7 @@
 		<nav class="main-navigation">
 			<ul id="menu-main-menu" class="main-menu">
 				<li class="current-menu-item"><a href="<?php echo base_url(); ?>">Home</a></li>
+				<li><a href="<?php echo base_url('semua'); ?>">Semua</a></li>
 				<?php foreach ($array_category as $category) { ?>
 				<li><a href="<?php echo $category['link']; ?>"><?php echo $category['name']; ?></a></li>
 				<?php } ?>
@@ -72,42 +81,12 @@
 				</div>
 				<div class="newsticker-content">
 					<ul id="newsticker-1">
+						<?php foreach ($array_post as $row) { ?>
 						<li>
-							<a href="http://demo.bright-theme.com/presto/top-50-classic-wedding-songs/">Top 50 Classic Wedding Songs</a>
-							&mdash; Hey there where ya goin&#8217;, not exactly knowin&#8217;, who says&hellip;
+							<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a>
+							&mdash; <?php echo get_length_char($row['desc_limit'], 75, ''); ?> &hellip;
 						</li>
-						<li>
-							<a href="http://demo.bright-theme.com/presto/education-tips-15-ideas-that-will-encourage-kids-to-write/">Education Tips: 15 Ideas That Will Encourage Kids to Write</a>
-							&mdash; Ten years ago a crack commando unit was sent to&hellip;
-						</li>
-						<li>
-							<a href="http://demo.bright-theme.com/presto/your-money-13-money-saving-tips-for-2013/">Your Money: 13 Money-saving Tips for 2013</a>
-							&mdash; Hong Kong Phooey, number one super guy. Hong Kong Phooey,&hellip;
-						</li>
-						<li>
-							<a href="http://demo.bright-theme.com/presto/10-tips-for-a-better-time-schedule-and-management/">10 Tips for A Better Time Schedule and Management</a>
-							&mdash; There&#8217;s a voice that keeps on calling me. Down the&hellip;
-						</li>
-						<li>
-							<a href="http://demo.bright-theme.com/presto/top-10-tips-for-building-loving-relationships/">Top 10 Tips For Building Loving Relationships</a>
-							&mdash; Top Cat! The most effectual Top Cat! Who&#8217;s intellectual close&hellip;
-						</li>
-						<li>
-							<a href="http://demo.bright-theme.com/presto/news-portal-apps-for-your-android-gadgets/">News Portal Apps for Your Android Gadgets</a>
-							&mdash; Ten years ago a crack commando unit was sent to&hellip;
-						</li>
-						<li>
-							<a href="http://demo.bright-theme.com/presto/simplify-your-responsive-design-workflow-with-screensiz-es/">Simplify Your Responsive Design Workflow With Screensiz.es</a>
-							&mdash; There&#8217;s a voice that keeps on calling me. Down the&hellip;
-						</li>
-						<li>
-							<a href="http://demo.bright-theme.com/presto/11-tips-for-developing-a-mobile-app-that-users-will-love/">11 Tips for Developing a Mobile App that Users will Love</a>
-							&mdash; ong Kong Phooey, number one super guy. Hong Kong Phooey,&hellip;
-						</li>
-						<li>
-							<a href="http://demo.bright-theme.com/presto/samsung-premiere-2013-will-unveil-new-galaxy-and-ativ-devices/">Samsung Premiere 2013 Will Unveil New Galaxy and ATIV Devices</a>
-							&mdash; 80 days around the world, no we won&#8217;t say a&hellip;
-						</li>
+						<?php } ?>
 					</ul>
 					<script type="text/javascript">
 					jQuery(document).ready(function(){
@@ -129,7 +108,7 @@
 					<li><a target="_blank" href="http://pinterest.com/envato" class="icon-pinterest"></a></li>
 					<li><a href="http://demo.bright-theme.com/presto?random=1" class="icon-shuffle"></a></li>
 					-->
-					<li><a target="_blank" href="<?php echo base_url('feed'); ?>" class="icon-rss"></a></li>									
+					<li><a target="_blank" href="<?php echo base_url('rss'); ?>" class="icon-rss"></a></li>									
 				</ul>
 			</div>
 		</div>
