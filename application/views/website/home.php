@@ -58,7 +58,7 @@
 		<?php $this->load->view( 'website/common/header.php' ); ?>
 	
 		<!-- top carousel -->
-		<div class="site-top-content row"><div class="twelve columns">
+		<div class="site-top-content row" style="max-height: 275px;"><div class="twelve columns">
 			<div id="presto-top-carousel-2" class="widget widget-top-carousel">
 				<div class="row">
 					<div class="twelve columns"><div class="top-carousel-wrap">
@@ -97,30 +97,28 @@
 					</div></div>
 				</div>
 				<script type="text/javascript">
-					jQuery(document).ready(function(){
-						var carousel = jQuery("#top-carousel");
-						carousel.carouFredSel({
-							responsive	: true,
-							circular 	: false,
-							infinite 	: false,
-							prev 		: '#top-carousel-prev',
-							next 		: '#top-carousel-next',
-							height 		: "auto",
-							width 		: "100%",
-							auto 		: false,	
-							duration 	: 1000,
-							items 		: { visible: { min: 2, max: 4 }, width: 257 }, 
-							onCreate 	: function() {
-								jQuery(window).on('load', function(){
-									carousel.parent().add(carousel).css({
-										'height': Math.max.apply(Math, carousel.children().map(function(){ return jQuery(this).height(); }).get()) + 'px'});
-								}).trigger('load');
-								
-								jQuery(window).on('resize', function(){
-									carousel.parent().add(carousel).css('height', Math.max.apply(Math, carousel.children().map(function(){ return jQuery(this).height(); }).get()) + 'px');
-								}).trigger('resize');
-							}
-						});
+					var carousel = jQuery("#top-carousel");
+					carousel.carouFredSel({
+						responsive	: true,
+						circular 	: false,
+						infinite 	: false,
+						prev 		: '#top-carousel-prev',
+						next 		: '#top-carousel-next',
+						height 		: "auto",
+						width 		: "100%",
+						auto 		: false,	
+						duration 	: 1000,
+						items 		: { visible: { min: 2, max: 4 }, width: 257 }, 
+						onCreate 	: function() {
+							jQuery(window).on('load', function(){
+								carousel.parent().add(carousel).css({
+									'height': Math.max.apply(Math, carousel.children().map(function(){ return jQuery(this).height(); }).get()) + 'px'});
+							}).trigger('load');
+							
+							jQuery(window).on('resize', function(){
+								carousel.parent().add(carousel).css('height', Math.max.apply(Math, carousel.children().map(function(){ return jQuery(this).height(); }).get()) + 'px');
+							}).trigger('resize');
+						}
 					});
 				</script>
 			</div>

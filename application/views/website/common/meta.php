@@ -30,6 +30,7 @@
 	<script> var web = <?php echo json_encode($web); ?></script>
 	<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery.js'></script>
 	<script type='text/javascript' src='<?php echo base_url(); ?>static/js/jquery-migrate.min.js'></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>static/js/jquery.carouFredSel.js"></script>
 	
 	<!--[if lt IE 9]>
 	<script type='text/javascript' src='<?php echo base_url(); ?>static/js/html5.js'></script>

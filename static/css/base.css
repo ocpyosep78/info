@@ -101,6 +101,7 @@
 	.one, .row .one { width: 8.33333%; }
 	.two, .row .two { width: 16.66667%; }
 	.three, .row .three { width: 25%; }
+	.four { width: 33.33333%; min-height: 200px; }
 	.four, .row .four { width: 33.33333%; }
 	.five, .row .five { width: 41.66667%; }
 	.six, .row .six { width: 50%; }

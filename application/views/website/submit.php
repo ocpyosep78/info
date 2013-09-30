@@ -15,10 +15,14 @@
 		<div class="site-main row">
 			<div class="twelve columns"><div class="site-main-wrap">
 				<div class="primary-content"><div class="primary-content-wrap">
+<div class="hide">
+	<iframe name="iframe_thumbnail" src="<?php echo base_url('panel/upload?callback_name=post_thumbnail'); ?>"></iframe>
+</div>
 
 <div id="respond" style="margin-top: 0px;">
 	<h3 id="reply-title" class="comment-reply-title">Submit Berita</h3>
 	<form id="commentform">
+		<input type="hidden" name="action" value="update" />
 		<p>
 			<label>Kategori <span class="required">*</span></label>
 			<select name="category_id">
@@ -31,22 +35,26 @@
 		</p>
 		<p>
 			<label>Deskripsi <span class="required">*</span></label>
-			<textarea name="name" cols="45" rows="8"></textarea>
+			<textarea name="desc" cols="45" rows="8"></textarea>
 		</p>
 		<p>
 			<label>Gambar</label>
-			<input name="thumbnail" type="text" />
-			<input type="button" value="Pilih Gambar" />
+			<input name="thumbnail" type="text" readonly="readonly" />
+			<input type="button" name="browse" value="Pilih Gambar" />
 		</p>
 		<p>
 			<label>Link <span class="required">*</span></label>
 			<input name="link_source" type="text" />
 		</p>
 		<p class="form-submit">
-			<input name="submit" type="submit" id="submit" value="Post Comment" />
-			<input type="hidden" name="comment_parent" id="comment_parent" value="0" />
+			<input type="submit" id="submit" value="Submit Link" />
 		</p>
 	</form>
+</div>
+
+<div class="cnt-message alert alert-error hide">
+	<h3 class="alert-title">Error</h3>
+	<span></span>
 </div>
 
 				</div></div>
@@ -68,31 +76,31 @@ $(document).ready(function() {
 	post_thumbnail = function(p) { $('[name="thumbnail"]').val(p.file_name); }
 	
 	// form
-	$("#form-submit").validate({
+	$("#commentform").validate({
 		rules: {
 			category_id: { required: true },
 			name: { required: true },
 			desc: { required: true },
-			download: { required: true, url: true },
+			link_source: { required: true, url: true },
 			thumbnail: { required: true }
 		}
 	});
 	$('[name="browse"]').click(function() { window.iframe_thumbnail.browse(); });
 	
-	$('#form-submit').submit(function() {
-		if (! $("#form-submit").valid()) {
+	$('#commentform').submit(function() {
+		if (! $("#commentform").valid()) {
 			return false;
 		}
 		
-		$('.c_message').hide();
-		var param = Site.Form.GetValue('form-submit');
-		delete param.submit;
+		$('.cnt-message').hide();
+		var param = Site.Form.GetValue('commentform');
+		delete param.browse;
 		Func.ajax({ url: web.host + 'submit/action', param: param, callback: function(result) {
 			if (result.status) {
 				window.location = result.redirect;
 			} else {
-				$('.c_message').slideDown();
-				$('.c_message').text(result.message);
+				$('.cnt-message').slideDown();
+				$('.cnt-message span').text(result.message);
 			}
 		} });
 		

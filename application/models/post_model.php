@@ -68,6 +68,8 @@ class Post_model extends CI_Model {
 			";
 		} else if (isset($param['year']) && isset($param['month']) && isset($param['alias'])) {
 			$select_query  = "SELECT * FROM ".POST." WHERE YEAR(create_date) = '".$param['year']."' AND MONTH(create_date) = '".$param['month']."' AND alias = '".$param['alias']."' LIMIT 1";
+        } else if (isset($param['link_source'])) {
+			$select_query  = "SELECT * FROM ".POST." WHERE link_source = '".$param['link_source']."' LIMIT 1";
         } else if (isset($param['alias'])) {
 			$select_query  = "SELECT alias FROM ".POST." WHERE alias = '".$param['alias']."' LIMIT 1";
         }

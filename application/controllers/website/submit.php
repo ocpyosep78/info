@@ -6,6 +6,53 @@ class submit extends CI_Controller {
     }
     
     function index() {
-		$this->load->view( 'website/submit' );
+		if (isset($this->uri->segments[2]) && !empty($this->uri->segments[2])) {
+			$method_name = $this->uri->segments[2];
+			$this->$method_name();
+		} else {
+			$this->load->view( 'website/submit' );
+		}
+    }
+	
+    function action() {
+		$action = (!empty($_POST['action'])) ? $_POST['action'] : '';
+		unset($_POST['action']);
+		
+		// user
+		$is_login = $this->User_model->is_login();
+		$user = $this->User_model->get_session();
+		
+		// post check
+		$post_check = $this->Post_model->get_by_id(array( 'link_source' => $_POST['link_source'] ));
+		
+		if (! $is_login) {
+			$result = array( 'status' => false, 'message' => 'Session Anda sudah berakhir, silahkan login kembali.' );
+			echo json_encode($result);
+			exit;
+		} else if (count($post_check) > 0) {
+			$result = array( 'status' => false, 'message' => 'Link ini sudah ada dalam database kami, silahkan memasukan link yang lain.' );
+			echo json_encode($result);
+			exit;
+		}
+		
+		$result = array( 'status' => false );
+		if ($action == 'update') {
+			$param['user_id'] = $user['id'];
+			$param['name'] = $_POST['name'];
+			$param['thumbnail'] = $_POST['thumbnail'];
+			$param['link_source'] = $_POST['link_source'];
+			$param['desc'] = nl2br(strip_tags($_POST['desc']));
+			$param['post_status_id'] = POST_STATUS_PUBLISH;
+			$param['alias'] = $this->Post_model->get_name($_POST['name']);
+			$param['create_date'] = $this->config->item('current_datetime');
+			$param['publish_date'] = $this->config->item('current_datetime');
+			$result = $this->Post_model->update($param);
+			
+			// post
+			$post = $this->Post_model->get_by_id(array( 'id' => $result['id'] ));
+			$result['redirect'] = $post['post_link'];
+		}
+		
+		echo json_encode($result);
     }
 }
