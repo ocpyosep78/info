@@ -4,7 +4,7 @@ class User_model extends CI_Model {
     function __construct() {
         parent::__construct();
 		
-        $this->field = array( 'id', 'user_type_id', 'email', 'fullname', 'passwd', 'address', 'register_date', 'is_active' );
+        $this->field = array( 'id', 'user_type_id', 'alias', 'email', 'fullname', 'passwd', 'address', 'register_date', 'is_active' );
     }
 
     function update($param) {
@@ -40,7 +40,9 @@ class User_model extends CI_Model {
             $select_query  = "SELECT * FROM ".USER." WHERE id = '".$param['id']."' LIMIT 1";
         } else if (isset($param['email'])) {
             $select_query  = "SELECT * FROM ".USER." WHERE email = '".$param['email']."' LIMIT 1";
-        } 
+        } else if (isset($param['alias'])) {
+            $select_query  = "SELECT * FROM ".USER." WHERE alias = '".$param['alias']."' LIMIT 1";
+        }
        
         $select_result = mysql_query($select_query) or die(mysql_error());
         if (false !== $row = mysql_fetch_assoc($select_result)) {
@@ -152,6 +154,14 @@ class User_model extends CI_Model {
 		$is_login = $this->is_login($admin_level);
 		if (!$is_login) {
 			header("Location: ".base_url('panel'));
+			exit;
+		}
+	}
+	
+	function required_login_website() {
+		$is_login = $this->is_login();
+		if (!$is_login) {
+			header("Location: ".base_url('login'));
 			exit;
 		}
 	}

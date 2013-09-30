@@ -1,4 +1,7 @@
 <?php
+	// user
+	$is_login = $this->User_model->is_login();
+	
 	// array category
 	$array_category = $this->Category_model->get_array();
 	
@@ -14,18 +17,26 @@
 	<div class="twelve columns">
 		<nav class="top-navigation fl">
 			<ul id="menu-top-menu" class="top-menu">
+				<?php if ($is_login) { ?>
+				<li><a href="<?php echo base_url('submit'); ?>">Submit</a></li>
+				<li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
+				<?php } else { ?>
 				<li><a href="<?php echo base_url('login'); ?>">Login</a></li>
 				<li><a href="<?php echo base_url('register'); ?>">Register</a></li>
 				<li><a href="<?php echo base_url('submit'); ?>">Submit</a></li>
-				<li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
+				<?php } ?>
 			</ul>
 			<div class="top-menu-mobile">
 				<span class="icon-menu"></span>
 				<ul id="menu-top-menu-1" class="top-mobile-menu">
+					<?php if ($is_login) { ?>
+					<li><a href="<?php echo base_url('submit'); ?>">Submit</a></li>
+					<li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
+					<?php } else { ?>
 					<li><a href="<?php echo base_url('login'); ?>">Login</a></li>
 					<li><a href="<?php echo base_url('register'); ?>">Register</a></li>
 					<li><a href="<?php echo base_url('submit'); ?>">Submit</a></li>
-					<li><a href="<?php echo base_url('logout'); ?>">Logout</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 		</nav>

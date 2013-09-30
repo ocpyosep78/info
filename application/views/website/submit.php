@@ -1,4 +1,7 @@
 <?php
+	// user
+	$this->User_model->required_login_website();
+	
 	// array category
 	$array_category = $this->Category_model->get_array();
 ?>

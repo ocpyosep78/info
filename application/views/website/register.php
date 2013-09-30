@@ -11,9 +11,10 @@
 <div id="respond" style="margin-top: 0px;">
 	<h3 id="reply-title" class="comment-reply-title">Register</h3>
 	<form id="commentform">
+		<input type="hidden" name="action" value="register" />
 		<p>
 			<label>Username <span class="required">*</span></label>
-			<input name="user_name" type="text" />
+			<input name="alias" type="text" />
 		</p>
 		<p>
 			<label>Email <span class="required">*</span></label>
@@ -25,7 +26,7 @@
 		</p>
 		<p>
 			<label>Password <span class="required">*</span></label>
-			<input name="passwd" type="password" />
+			<input name="passwd" id="passwd" type="password" />
 		</p>
 		<p>
 			<label>Ulangi Password<span class="required">*</span></label>
@@ -36,15 +37,14 @@
 			<textarea name="address" cols="45" rows="8"></textarea>
 		</p>
 		<p class="form-submit">
-			<input name="submit" type="submit" id="submit" value="Post Comment" />
-			<input type="hidden" name="comment_parent" id="comment_parent" value="0" />
+			<input name="submit" type="submit" id="submit" value="Register" />
 		</p>
 	</form>
 </div>
 
-<div class="alert alert-error">
-	<h3 class="alert-title">An Error Alert</h3>
-	One for all and all for one, Muskehounds are always ready. One for all and all for one, helping everybody. One for all and all for one, it’s a pretty story. Sharing everything with fun, that’s the way to be. One for all and all for one, Muskehounds are always ready. One for all and all for one, helping everybody. One for all and all for one, can sound pretty corny.
+<div class="cnt-message alert alert-error hide">
+	<h3 class="alert-title">Error</h3>
+	<span></span>
 </div>
 
 				</div></div>
@@ -60,5 +60,36 @@
 </div>
 
 <?php $this->load->view( 'website/common/js.php' ); ?>
+
+<script type="text/javascript">
+$('#commentform').validate({
+	rules: {
+		user_name: { required: true, minlength: 5 },
+		email: { required: true, email: true },
+		fullname: { required: true, minlength: 5 },
+		passwd: { required: true },
+		passwd_confirm: { required: true, equalTo: "#passwd" }
+	}
+});
+
+$('#commentform').submit(function(event) {
+	event.preventDefault();
+	if (! $('#commentform').valid()) {
+		return false;
+	}
+	
+	$('.cnt-message').hide();
+	var param = Site.Form.GetValue('commentform');
+	Func.ajax({ url: web.host + 'register/action', param: param, callback: function(result) {
+		if (result.status) {
+			window.location = web.host;
+		} else {
+			$('.cnt-message span').text(result.message);
+			$('.cnt-message').slideDown('slow');
+		}
+	} });
+});
+</script>
+
 </body>
 </html>

@@ -2877,6 +2877,10 @@
 		#commentform .form-allowed-tags {
 			font-size: 11px;
 		}
+		#commentform .error {
+			color: #ff564b;
+			font-weight: normal;
+		}
 		#commentform #submit {
 			background: #444444;
 			border: 1px solid #444444;

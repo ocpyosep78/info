@@ -20,12 +20,15 @@ if ($is_website) {
 	$route['tag'] = "website/tag";
 	$route['tag/(:any)'] = "website/tag";
 	$route['login'] = "website/login";
+	$route['login/(:any)'] = "website/login";
 	$route['logout'] = "website/logout";
 	$route['submit'] = "website/submit";
+	$route['submit/(:any)'] = "website/submit";
 	$route['register'] = "website/register";
-} else {
-	$route['panel'] = "panel/home";
+	$route['register/(:any)'] = "website/register";
 }
+
+$route['panel'] = "panel/home";
 
 $route['default_controller'] = "website/home";
 $route['404_override'] = '';
