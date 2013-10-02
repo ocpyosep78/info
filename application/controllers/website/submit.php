@@ -41,6 +41,7 @@ class submit extends CI_Controller {
 			$param['name'] = $_POST['name'];
 			$param['thumbnail'] = $_POST['thumbnail'];
 			$param['link_source'] = $_POST['link_source'];
+			$param['category_id'] = $_POST['category_id'];
 			$param['desc'] = nl2br(strip_tags($_POST['desc']));
 			$param['post_status_id'] = POST_STATUS_PUBLISH;
 			$param['alias'] = $this->Post_model->get_name($_POST['name']);

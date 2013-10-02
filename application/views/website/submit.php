@@ -40,7 +40,7 @@
 		<p>
 			<label>Gambar</label>
 			<input name="thumbnail" type="text" readonly="readonly" />
-			<input type="button" name="browse" value="Pilih Gambar" />
+			<input type="button" name="browse" value="Pilih Gambar" class="button button-red" />
 		</p>
 		<p>
 			<label>Link <span class="required">*</span></label>

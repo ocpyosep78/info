@@ -13,8 +13,8 @@ if (count($array_arg) >= 1) {
 }
 
 if ($is_website) {
-	$route['(semua|gaya-hidup|hiburan|pendidikan|teknologi)'] = "website/category";
-	$route['(semua|gaya-hidup|hiburan|pendidikan|teknologi)/(:any)'] = "website/category";
+	$route['(semua|gaya-hidup|hiburan|pendidikan|teknologi|aneh)'] = "website/category";
+	$route['(semua|gaya-hidup|hiburan|pendidikan|teknologi|aneh)/(:any)'] = "website/category";
 	$route['(:num)/(:num)/(:any)'] = "website/detail";
 	$route['rss'] = "website/rss";
 	$route['tag'] = "website/tag";

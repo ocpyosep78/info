@@ -65,7 +65,7 @@
 	</div>
 	<?php } ?>
 	
-	<a href="<?php echo $post['post_link']; ?>" style="text-align: center; display: block;" target="_blank" class="button button-red" rel="nofollow">Lihat Sumber</a>
+	<a href="<?php echo $post['link_source']; ?>" style="text-align: center; display: block;" target="_blank" class="button button-red" rel="nofollow">Lihat Sumber</a>
 </article>
 
 <!--
