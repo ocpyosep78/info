@@ -42,24 +42,6 @@
 	</div>
 	
 	<?php if ($this->config->item('online_widget')) { ?>
-	<div id="presto-ads-300x250-2" class="widget widget-ads-300x250">
-		<div class="ads-block">
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-0445723121454332";
-/* Basic */
-google_ad_slot = "5061721949";
-google_ad_width = 300;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-		</div>
-	</div>
-	<?php } ?>
-	
-	<?php if ($this->config->item('online_widget')) { ?>
 	<div id="presto-ads-300x250-3" class="widget widget-ads-300x250">
 		<div class="ads-block">
 			<script language="javascript">
