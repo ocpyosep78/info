@@ -1,10 +1,11 @@
 <?php
-	// latest post
-	$param_latest['is_publish'] = true;
-	$param_latest['publish_date'] = $this->config->item('current_datetime');
-	$param_latest['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
-	$param_latest['limit'] = 10;
-	$array_latest = $this->Post_model->get_array($param_latest);
+	// carousel post
+	$param_carousel['is_publish'] = true;
+	$param_carousel['is_popular'] = 1;
+	$param_carousel['publish_date'] = $this->config->item('current_datetime');
+	$param_carousel['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
+	$param_carousel['limit'] = 20;
+	$array_carousel = $this->Post_model->get_array($param_carousel);
 	
 	// popular post
 	$param_popular['is_hot'] = 1;
@@ -64,7 +65,7 @@
 					<div class="twelve columns"><div class="top-carousel-wrap">
 						<div class="row">
 							<ul id="top-carousel" class="top-carousel">
-								<?php foreach ($array_latest as $row) { ?>
+								<?php foreach ($array_carousel as $row) { ?>
 								<?php if (empty($row['thumbnail_link'])) { continue; } ?>
 								<li class="three columns">
 									<div class="top-carousel-item post-hover-animate">
@@ -82,7 +83,9 @@
 										</div>
 										<div class="postmeta mb-5">
 											by <a title="Posts by <?php echo $row['user_fullname']; ?>" rel="author"><?php echo $row['user_fullname']; ?></a>										</div>
-										<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>" class="top-carousel-title"><?php echo $row['name']; ?></a>
+											<a href="<?php echo $row['post_link']; ?>" title="<?php echo $row['name']; ?>" class="top-carousel-title">
+												<?php echo get_length_char($row['name'], 60, ' ...'); ?>
+											</a>
 									</div>
 								</li>
 								<?php } ?>

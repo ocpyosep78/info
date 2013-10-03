@@ -9,7 +9,7 @@
 	$param_post['is_publish'] = true;
 	$param_post['publish_date'] = $this->config->item('current_datetime');
 	$param_post['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
-	$param_post['limit'] = 5;
+	$param_post['limit'] = 10;
 	$array_post = $this->Post_model->get_array($param_post);
 ?>
 <header class="site-header">

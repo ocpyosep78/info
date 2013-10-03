@@ -98,7 +98,85 @@
 	</div>
 </div>
 	
-<div id="comments" class="comments-area">Isi comment</div>
+<div id="comments" class="comments-area">
+	<h3 class="comments-heading">7 comments on <span class="comment-post-title">Top 50 Classic Wedding Songs</span></h3>
+	<ol class="comments-list">
+		<li class="comment even thread-even depth-1" id="li-comment-4">
+			<div class="comment-post" id="comment-4">
+				<div class="comment-avatar">
+					<img alt='' src='<?php echo base_url(); ?>static/img/user.png' class='avatar avatar-60 photo' height='60' width='60' />
+				</div>
+				<div class="comment-detail">
+					<span class="t-pad"></span>
+					<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
+									<div class="comment-meta">
+						<time datetime="2013-05-29T11:28:20+00:00" class="comment-date">
+						May 29, 2013 at 11:28 am					</time>
+											 / <a class='comment-reply-link' href='/presto/top-50-classic-wedding-songs/?replytocom=4#respond' onclick='return addComment.moveForm("comment-4", "4", "respond", "72")'>Reply</a>				</div>
+					<div class="comment-message"><p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l&#8217;imprimerie depuis les années 1500,</p></div>
+				</div>
+			</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-4">
+			<div class="comment-post" id="comment-4">
+				<div class="comment-avatar">
+					<img alt='' src='<?php echo base_url(); ?>static/img/user.png' class='avatar avatar-60 photo' height='60' width='60' />
+				</div>
+				<div class="comment-detail">
+					<span class="t-pad"></span>
+					<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
+									<div class="comment-meta">
+						<time datetime="2013-05-29T11:28:20+00:00" class="comment-date">
+						May 29, 2013 at 11:28 am					</time>
+											 / <a class='comment-reply-link' href='/presto/top-50-classic-wedding-songs/?replytocom=4#respond' onclick='return addComment.moveForm("comment-4", "4", "respond", "72")'>Reply</a>				</div>
+					<div class="comment-message"><p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l&#8217;imprimerie depuis les années 1500,</p></div>
+				</div>
+			</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="li-comment-4">
+			<div class="comment-post" id="comment-4">
+				<div class="comment-avatar">
+					<img alt='' src='<?php echo base_url(); ?>static/img/user.png' class='avatar avatar-60 photo' height='60' width='60' />
+				</div>
+				<div class="comment-detail">
+					<span class="t-pad"></span>
+					<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
+									<div class="comment-meta">
+						<time datetime="2013-05-29T11:28:20+00:00" class="comment-date">
+						May 29, 2013 at 11:28 am					</time>
+											 / <a class='comment-reply-link' href='/presto/top-50-classic-wedding-songs/?replytocom=4#respond' onclick='return addComment.moveForm("comment-4", "4", "respond", "72")'>Reply</a>				</div>
+					<div class="comment-message"><p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l&#8217;imprimerie depuis les années 1500,</p></div>
+				</div>
+			</div>
+		</li>
+	</ol>
+	
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
+		<form action="http://demo.bright-theme.com/presto/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+			<p class="comment-form-author">
+				<label for="author">Name <span class="required">*</span></label>
+				<input id="author" name="author" type="text" value="" size="30" aria-required='true' />
+			</p>
+			<p class="comment-form-email">
+				<label for="email">Email <span class="required">*</span></label>
+				<input id="email" name="email" type="text" value="" size="30" aria-required='true' />
+			</p>
+			<p class="comment-form-url">
+				<label for="url">Website</label>
+				<input id="url" name="url" type="text" value="" size="30" />
+			</p>
+			<p class="comment-form-comment">
+				<label for="comment">Comment</label>
+				<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+			</p>
+			<p class="form-submit">
+				<input name="submit" type="submit" id="submit" value="Post Comment" />
+			</p>
+		</form>
+	</div>
+</div>
 
 				</div></div>
 				<?php $this->load->view( 'website/common/sidebar.php' ); ?>
