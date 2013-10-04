@@ -1,4 +1,6 @@
 <?php
+	$user = $this->User_model->get_session();
+	
 	$post = $this->Post_model->get_link();
 	if (count($post) == 0 || $post['post_status_id'] == POST_STATUS_DRAFT) {
 		header("HTTP/1.1 301 Moved Permanently");
@@ -28,6 +30,11 @@
 	if (!empty($post['thumbnail_link'])) {
 		$param_meta['tag_meta'][] = array( 'property' => 'og:image', 'content' => $post['thumbnail_link'] );
 	}
+	
+	// comment
+	$param_comment['post_id'] = $post['id'];
+	$param_comment['limit'] = 10;
+	$array_comment = $this->Comment_model->get_array($param_comment);
 ?>
 
 <?php $this->load->view( 'website/common/meta.php' ); ?>
@@ -99,80 +106,49 @@
 </div>
 	
 <div id="comments" class="comments-area">
-	<h3 class="comments-heading">7 comments on <span class="comment-post-title">Top 50 Classic Wedding Songs</span></h3>
+	<h3 class="comments-heading"><?php echo count($array_comment); ?> komentar di <span class="comment-post-title"><?php echo $post['name']; ?></span></h3>
+	<?php if (count($array_comment) > 0) { ?>
 	<ol class="comments-list">
-		<li class="comment even thread-even depth-1" id="li-comment-4">
-			<div class="comment-post" id="comment-4">
+		<?php foreach ($array_comment as $row) { ?>
+		<li class="comment even thread-even depth-1">
+			<div class="comment-post">
 				<div class="comment-avatar">
-					<img alt='' src='<?php echo base_url(); ?>static/img/user.png' class='avatar avatar-60 photo' height='60' width='60' />
+					<img src='<?php echo base_url(); ?>static/img/user.png' class='avatar avatar-60 photo' height='60' width='60' />
 				</div>
 				<div class="comment-detail">
 					<span class="t-pad"></span>
-					<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
-									<div class="comment-meta">
-						<time datetime="2013-05-29T11:28:20+00:00" class="comment-date">
-						May 29, 2013 at 11:28 am					</time>
-											 / <a class='comment-reply-link' href='/presto/top-50-classic-wedding-songs/?replytocom=4#respond' onclick='return addComment.moveForm("comment-4", "4", "respond", "72")'>Reply</a>				</div>
-					<div class="comment-message"><p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l&#8217;imprimerie depuis les années 1500,</p></div>
+					<div class="comment-user"><a class='url'><?php echo $row['fullname']; ?></a></div>
+					<div class="comment-message"><p><?php echo $row['comment']; ?></p></div>
 				</div>
 			</div>
 		</li>
-		<li class="comment even thread-even depth-1" id="li-comment-4">
-			<div class="comment-post" id="comment-4">
-				<div class="comment-avatar">
-					<img alt='' src='<?php echo base_url(); ?>static/img/user.png' class='avatar avatar-60 photo' height='60' width='60' />
-				</div>
-				<div class="comment-detail">
-					<span class="t-pad"></span>
-					<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
-									<div class="comment-meta">
-						<time datetime="2013-05-29T11:28:20+00:00" class="comment-date">
-						May 29, 2013 at 11:28 am					</time>
-											 / <a class='comment-reply-link' href='/presto/top-50-classic-wedding-songs/?replytocom=4#respond' onclick='return addComment.moveForm("comment-4", "4", "respond", "72")'>Reply</a>				</div>
-					<div class="comment-message"><p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l&#8217;imprimerie depuis les années 1500,</p></div>
-				</div>
-			</div>
-		</li>
-		<li class="comment even thread-even depth-1" id="li-comment-4">
-			<div class="comment-post" id="comment-4">
-				<div class="comment-avatar">
-					<img alt='' src='<?php echo base_url(); ?>static/img/user.png' class='avatar avatar-60 photo' height='60' width='60' />
-				</div>
-				<div class="comment-detail">
-					<span class="t-pad"></span>
-					<div class="comment-user"><a href='http://fr' rel='external nofollow' class='url'>hy</a></div>
-									<div class="comment-meta">
-						<time datetime="2013-05-29T11:28:20+00:00" class="comment-date">
-						May 29, 2013 at 11:28 am					</time>
-											 / <a class='comment-reply-link' href='/presto/top-50-classic-wedding-songs/?replytocom=4#respond' onclick='return addComment.moveForm("comment-4", "4", "respond", "72")'>Reply</a>				</div>
-					<div class="comment-message"><p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l&#8217;imprimerie depuis les années 1500,</p></div>
-				</div>
-			</div>
-		</li>
+		<?php } ?>
 	</ol>
+	<?php } ?>
 	
 	<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
-		<form action="http://demo.bright-theme.com/presto/wp-comments-post.php" method="post" id="commentform" class="comment-form">
-			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
-			<p class="comment-form-author">
-				<label for="author">Name <span class="required">*</span></label>
-				<input id="author" name="author" type="text" value="" size="30" aria-required='true' />
+		<h3 id="reply-title" class="comment-reply-title">Tinggalkan Komentar</h3>
+		<form method="post" id="commentform" class="comment-form">
+			<input type="hidden" name="action" value="comment" />
+			<input type="hidden" name="post_id" value="<?php echo $post['id']; ?>" />
+			
+			<?php if (! $user['is_login']) { ?>
+			<p>
+				<label>Name <span class="required">*</span></label>
+				<input name="fullname" type="text" />
 			</p>
-			<p class="comment-form-email">
-				<label for="email">Email <span class="required">*</span></label>
-				<input id="email" name="email" type="text" value="" size="30" aria-required='true' />
+			<p>
+				<label>Email <span class="required">*</span></label>
+				<input name="email" type="text" />
 			</p>
-			<p class="comment-form-url">
-				<label for="url">Website</label>
-				<input id="url" name="url" type="text" value="" size="30" />
-			</p>
-			<p class="comment-form-comment">
-				<label for="comment">Comment</label>
-				<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+			<?php } ?>
+			
+			<p>
+				<label>Comment</label>
+				<textarea name="comment" rows="8"></textarea>
 			</p>
 			<p class="form-submit">
-				<input name="submit" type="submit" id="submit" value="Post Comment" />
+				<input name="submit" type="submit" id="submit" value="Kirim Komentar" />
 			</p>
 		</form>
 	</div>
@@ -190,5 +166,37 @@
 </div>
 
 <?php $this->load->view( 'website/common/js.php' ); ?>
+
+<script>
+$(document).ready(function() {
+	$("#commentform").validate({
+		rules: {
+			fullname: { required: true, minlength: 4 },
+			email: { required: true, email: true },
+			comment: { required: true }
+		},
+		messages: {
+			fullname: { required: 'Silahkan mengisi field ini', minlength: '4 minimal karakter' },
+			email: { required: 'Silahkan mengisi field ini', email: 'Email anda tidak valid' },
+			comment: { required: 'Silahkan mengisi field ini' }
+		}
+	});
+	
+	$('#commentform').submit(function(event) {
+		event.preventDefault();
+		if (! $("#commentform").valid()) {
+			return false;
+		}
+		
+		var param = Site.Form.GetValue('commentform');
+		Func.ajax({ url: window.location.href, param: param, callback: function(result) {
+			if (result.status) {
+				window.location.reload();
+			}
+		} });
+	});
+});
+</script>
+
 </body>
 </html>

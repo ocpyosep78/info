@@ -26,6 +26,7 @@ define('CATEGORY_GAYA_HIDUP',					3);
 define('CATEGORY_TEKNOLOGI',					4);
 
 define('CATEGORY',								'category');
+define('COMMENT',								'comment');
 define('CONTACT',								'contact');
 define('PAGE_STATIC',							'page_static');
 define('POST',									'post');
