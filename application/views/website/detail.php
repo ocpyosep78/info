@@ -98,7 +98,7 @@
 				</a>
 			</div>
 			<?php } ?>
-			<div class="postmeta mb-5">by <a title="Posts by <?php echo $post['user_fullname']; ?>" rel="author"><?php echo $post['user_fullname']; ?></a></div>
+			<div class="postmeta mb-5">by <a title="Posts by <?php echo $row['user_fullname']; ?>" rel="author"><?php echo $row['user_fullname']; ?></a></div>
 			<a href="<?php echo $row['post_link']; ?>" class="post-title" title="<?php echo save_html_tag($row['name']); ?>"><?php echo $row['name']; ?></a>
 		</div>
 		<?php } ?>
