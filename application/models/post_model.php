@@ -179,8 +179,24 @@ class Post_model extends CI_Model {
 		}
 		
 		if (!empty($row['thumbnail'])) {
-			$row['thumbnail_link'] = base_url('static/upload/'.$row['thumbnail']);
-			$row['thumbnail_small_link'] = preg_replace('/\.(jpg|jpeg|png|gif)/i', '_s.$1', $row['thumbnail_link']);
+			$file_path = $this->config->item('base_path').'/static/upload/'.$row['thumbnail'];
+			$file_link = base_url('static/upload/'.$row['thumbnail']);
+			$file_small_path = preg_replace('/\.(jpg|jpeg|png|gif)/i', '_s.$1', $file_path);
+			$file_small_link = preg_replace('/\.(jpg|jpeg|png|gif)/i', '_s.$1', $file_link);
+			
+			if (! file_exists($file_path) && ! file_exists($file_small_path)) {
+				$param['id'] = $row['id'];
+				$param['thumbnail'] = '';
+				$this->update($param);
+			}
+			
+			if (file_exists($file_path)) {
+				$row['thumbnail_link'] = $file_link;
+				$row['thumbnail_small_link'] = $file_small_link;
+			} else {
+				$row['thumbnail_link'] = $file_small_link;
+				$row['thumbnail_small_link'] = $file_small_link;
+			}
 		}
 		
 		return $row;

@@ -58,7 +58,10 @@
 	</div>
 	
 	<div class="post-body cf">
+		<?php if (!empty($post['thumbnail_link'])) { ?>
 		<img src="<?php echo $post['thumbnail_link']; ?>" alt="<?php echo $post['name']; ?>" class="img-single" />
+		<?php } ?>
+		
 		<?php echo $post['desc']; ?>
 	</div>
 	

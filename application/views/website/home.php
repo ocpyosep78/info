@@ -284,8 +284,10 @@
 				<?php if (count($row) > 0) { ?>
 				<div class="newsbox-post-item post-hover-animate">
 					<div class="post-thumbnail mb-10">
+						<?php if (!empty($row['thumbnail_link'])) { ?>
 						<a href="<?php echo $row['post_link']; ?>">
 							<img src="<?php echo $row['thumbnail_link']; ?>" alt="" class=""></a>
+						<?php } ?>
 						<div class="post-thumb-meta">
 							<div class="fl">
 								<time class="postmeta-date" datetime="<?php echo GetFormatDate($row['publish_date'], array( 'FormatDate' => 'Y-m-d')); ?>"><?php echo GetFormatDate($row['publish_date']); ?></time>
