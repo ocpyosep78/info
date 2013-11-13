@@ -25,12 +25,21 @@ class submit extends CI_Controller {
 		// post check
 		$post_check = $this->Post_model->get_by_id(array( 'link_source' => $_POST['link_source'] ));
 		
+		// check illegal word
+		$is_illegal = array( 'status' => false );
+		$is_illegal = (!$is_illegal['status']) ? is_illegal_word($_POST['name']) : $is_illegal;
+		$is_illegal = (!$is_illegal['status']) ? is_illegal_word($_POST['link_source']) : $is_illegal;
+		
 		if (! $is_login) {
 			$result = array( 'status' => false, 'message' => 'Session Anda sudah berakhir, silahkan login kembali.' );
 			echo json_encode($result);
 			exit;
 		} else if (count($post_check) > 0) {
 			$result = array( 'status' => false, 'message' => 'Link ini sudah ada dalam database kami, silahkan memasukan link yang lain.' );
+			echo json_encode($result);
+			exit;
+		} else if ($is_illegal['status']) {
+			$result = array( 'status' => false, 'message' => 'Berita yang Anda posting mengandung kata ilegal ('.$is_illegal['word'].'). Maaf kami menambahkan filter tambahan karena website kami telah terblokir untuk beberapa operator internet.' );
 			echo json_encode($result);
 			exit;
 		}

@@ -942,6 +942,21 @@
 		}
 	}
 	
+	if (! function_exists('is_illegal_word')) {
+		function is_illegal_word($value) {
+			$array_illegal = array('orgasme','kutil','nanah','terlanjang','ngentot','payudara','bugil','memek');
+			$reqex = '/('.implode('|', $array_illegal).')/i';
+			preg_match($reqex, $value, $match);
+			
+			$result = array( 'status' => false );
+			if (!empty($match[1])) {
+				$result = array( 'status' => true, 'word' => $match[1] );
+			}
+			
+			return $result;
+		}
+	}
+	
 	if (! class_exists('curl')) {
 		class curl {
 			var $callback = false;
