@@ -76,9 +76,11 @@
 						<?php foreach ($array_latest as $key => $row) { ?>
 						<li>
 							<div class="newsbox-item">
+								<?php if (isset($row['thumbnail_small_link'])) { ?>
 								<div class="post-thumbnail">
 									<a href="<?php echo $row['post_link']; ?>"><img src="<?php echo $row['thumbnail_small_link']; ?>" alt="<?php echo $row['name']; ?>" class=""></a>
 								</div>
+								<?php } ?>
 								<a href="<?php echo $row['post_link']; ?>" class="post-title" title="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a>
 								<div class="postmeta">
 									by <a class="meta-author"><?php echo $row['user_fullname']; ?></a>

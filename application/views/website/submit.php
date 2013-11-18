@@ -81,8 +81,7 @@ $(document).ready(function() {
 			category_id: { required: true },
 			name: { required: true },
 			desc: { required: true },
-			link_source: { required: true, url: true },
-			thumbnail: { required: true }
+			link_source: { required: true, url: true }
 		}
 	});
 	$('[name="browse"]').click(function() { window.iframe_thumbnail.browse(); });

@@ -944,6 +944,8 @@
 	
 	if (! function_exists('is_illegal_word')) {
 		function is_illegal_word($value) {
+			$value = preg_replace('/@/i', 'a', $value);
+			
 			$array_illegal = array('orgasme','kutil','nanah','terlanjang','ngentot','payudara','bugil','memek');
 			$reqex = '/('.implode('|', $array_illegal).')/i';
 			preg_match($reqex, $value, $match);
