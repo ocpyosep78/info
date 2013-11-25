@@ -11,7 +11,7 @@
 	}
 	
 	// post detail
-	$post = $this->Post_model->get_by_id(array( 'id' => $post['id'], 'tag_include' => true ));
+	$post = $this->Post_model->get_by_id(array( 'id' => $post['id'], 'table_name' => $post['table_name'], 'tag_include' => true ));
 	
 	// related post
 	$param_post['max_id'] = $post['id'];

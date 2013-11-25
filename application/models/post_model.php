@@ -8,20 +8,21 @@ class Post_model extends CI_Model {
 			'id', 'user_id', 'category_id', 'post_status_id', 'alias', 'name', 'desc', 'thumbnail', 'link_source', 'create_date', 'publish_date',
 			'view_count', 'is_hot', 'is_popular'
 		);
+		$this->table = array( '201309', '201310' );
     }
 
-    function update($param) {
+    function update($param, $table = POST) {
         $result = array();
 		
         if (empty($param['id'])) {
-            $insert_query  = GenerateInsertQuery($this->field, $param, POST);
+            $insert_query  = GenerateInsertQuery($this->field, $param, $table);
             $insert_result = mysql_query($insert_query) or die(mysql_error());
            
             $result['id'] = mysql_insert_id();
             $result['status'] = '1';
             $result['message'] = 'Data berhasil disimpan.';
         } else {
-            $update_query  = GenerateUpdateQuery($this->field, $param, POST);
+            $update_query  = GenerateUpdateQuery($this->field, $param, $table);
             $update_result = mysql_query($update_query) or die(mysql_error());
            
             $result['id'] = $param['id'];
@@ -59,19 +60,25 @@ class Post_model extends CI_Model {
 	
     function get_by_id($param) {
         $array = array();
+		$table_name = (isset($param['table_name'])) ? $param['table_name'] : POST;
 		$param['tag_include'] = (isset($param['tag_include'])) ? $param['tag_include'] : false;
        
         if (isset($param['id'])) {
             $select_query  = "
 				SELECT Post.*, User.fullname user_fullname, Category.name category_name, Category.alias category_alias
-				FROM ".POST." Post
+				FROM ".$table_name." Post
 				LEFT JOIN ".CATEGORY." Category ON Category.id = Post.category_id
 				LEFT JOIN ".USER." User ON User.id = Post.user_id
 				WHERE Post.id = '".$param['id']."'
 				LIMIT 1
 			";
 		} else if (isset($param['year']) && isset($param['month']) && isset($param['alias'])) {
-			$select_query  = "SELECT * FROM ".POST." WHERE YEAR(create_date) = '".$param['year']."' AND MONTH(create_date) = '".$param['month']."' AND alias = '".$param['alias']."' LIMIT 1";
+			$check_name = $param['year'].$param['month'];
+			if (in_array($check_name, $this->table)) {
+				$table_name = POST.'_'.$check_name;
+			}
+			
+			$select_query  = "SELECT * FROM ".$table_name." WHERE YEAR(create_date) = '".$param['year']."' AND MONTH(create_date) = '".$param['month']."' AND alias = '".$param['alias']."' LIMIT 1";
         } else if (isset($param['link_source'])) {
 			$select_query  = "SELECT * FROM ".POST." WHERE link_source = '".$param['link_source']."' LIMIT 1";
         } else if (isset($param['alias'])) {
@@ -80,10 +87,11 @@ class Post_model extends CI_Model {
 		
         $select_result = mysql_query($select_query) or die(mysql_error());
         if (false !== $row = mysql_fetch_assoc($select_result)) {
+			$row['table_name'] = $table_name;
             $array = $this->sync($row);
         }
 		
-		if ($param['tag_include']) {
+		if (count($array) > 0 && $param['tag_include']) {
 			$array['array_tag'] = $this->Post_Tag_model->get_array(array( 'post_id' => $array['id'] ));
 		}
 		
@@ -141,7 +149,7 @@ class Post_model extends CI_Model {
 		return $TotalRecord;
     }
 	
-    function delete($param) {
+    function delete($param, $table = POST) {
 		// detele image
 		if (isset($param['id'])) {
 			$post = $this->get_by_id(array( 'id' => $param['id'] ));
@@ -152,7 +160,7 @@ class Post_model extends CI_Model {
 			@unlink($image_small);
 		}
 		
-		$delete_query  = "DELETE FROM ".POST." WHERE id = '".$param['id']."' LIMIT 1";
+		$delete_query  = "DELETE FROM $table WHERE id = '".$param['id']."' LIMIT 1";
 		$delete_result = mysql_query($delete_query) or die(mysql_error());
 		
 		$result['status'] = '1';
