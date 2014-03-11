@@ -6,15 +6,7 @@ class upload_clean extends CI_Controller {
     }
     
     function index() {
-		$file_path = '/home/infoguec/public_html/static/upload/2013/10/29/20131029_090851_6902.jpeg';
-		$file_small_path = '/home/infoguec/public_html/static/upload/2013/10/29/20131029_090851_6902_s.jpeg';
-		ImageResize($file_path, $file_small_path, 120, 80, 1);
-		exit;
-		/*	*/
-		
-		
-		echo 'stop it'; exit;
-		$year_month = '2013/09';
+		$year_month = '2013/11';
 		
 		// clean each month
 		$path_dir = $this->config->item('base_path').'/static/upload/'.$year_month;

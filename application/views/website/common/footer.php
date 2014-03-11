@@ -1,15 +1,21 @@
 <?php
 	// latest post
+	/*
 	$param_post['is_publish'] = true;
 	$param_post['publish_date'] = $this->config->item('current_datetime');
 	$param_post['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
 	$param_post['limit'] = 5;
 	$array_post = $this->Post_model->get_array($param_post);
+	/*	*/
+	$array_post = array();
 	
 	// popular tag
+	/*
 	$param_tag['publish_date'] = date("Y-m-d", strtotime("-2 weeks"));
 	$param_tag['limit'] = 15;
 	$array_tag = $this->Tag_model->get_popular($param_tag);
+	/*	*/
+	$array_tag = array();
 ?>
 <footer class="site-footer">
 	<div class="footer-widget-area"><div class="row">
