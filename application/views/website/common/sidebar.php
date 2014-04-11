@@ -3,26 +3,20 @@
 	$array_category = $this->Category_model->get_array();
 	
 	// random post
-	/*
 	$param_random['is_hot'] = 1;
 	$param_random['is_publish'] = true;
 	$param_random['publish_date'] = $this->config->item('current_datetime');
 	$param_random['sort'] = '{"is_custom":"1","query":"RAND()"}';
 	$param_random['limit'] = 6;
 	$array_random = $this->Post_model->get_array($param_random);
-	/*	*/
-	$array_random = array();
 	
 	// picture post
-	/*
 	$param_picture['is_picture'] = true;
 	$param_picture['is_publish'] = true;
 	$param_picture['publish_date'] = $this->config->item('current_datetime');
 	$param_latest['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
 	$param_picture['limit'] = 8;
 	$array_picture = $this->Post_model->get_array($param_picture);
-	/*	*/
-	$array_picture = array();
 	
 	// latest post
 	$param_latest['is_publish'] = true;
@@ -32,15 +26,12 @@
 	$array_latest = $this->Post_model->get_array($param_latest);
 	
 	// popular post
-	/*
 	$param_popular['is_hot'] = 1;
 	$param_popular['is_publish'] = true;
 	$param_popular['publish_date'] = $this->config->item('current_datetime');
 	$param_popular['sort'] = '[{"property":"publish_date","direction":"DESC"}]';
 	$param_popular['limit'] = 5;
 	$array_popular = $this->Post_model->get_array($param_popular);
-	/*	*/
-	$array_popular = array();
 ?>
 
 <div class="primary-sidebar">
@@ -170,15 +161,16 @@
 		</ul>
 	</div>
 	
+	<!--
 	<div id="presto-ads-160x600-2" class="widget widget-ads-160x600">
 		<div class="widget-title"><h3>160&#215;600 Ads &raquo;</h3></div>
 		<div class="ads-block">
 			<a href="#" target="_blank" rel="nofollow"><img src="<?php echo base_url(); ?>static/upload/ffffff.gif" alt=""></a>
 		</div>
 	</div>
+	-->
 	
 	<!--
-	
 	<div id="categories-3" class="widget widget_categories">
 		<div class="widget-title"><h3>Categories &raquo;</h3></div>
 		<ul>

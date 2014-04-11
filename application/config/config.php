@@ -9,11 +9,15 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
 } else if ($_SERVER['SERVER_NAME'] == '103.11.132.77') {
 	$config['base_url']			= 'http://103.11.132.77';
 	$config['base_path']		= realpath(dirname(__FILE__) . '/../..');
-	$config['online_widget']	= true;
-} else if ($_SERVER['SERVER_NAME'] == 'infogue.com' || $_SERVER['SERVER_NAME'] == 'www.infogue.com') {
+	$config['online_widget']	= false;
+} else if ($_SERVER['SERVER_NAME'] == 'infogue.com') {
 	$config['base_url']			= 'http://infogue.com';
 	$config['base_path']		= realpath(dirname(__FILE__) . '/../..');
-	$config['online_widget']	= true;
+	$config['online_widget']	= false;
+} else if ($_SERVER['SERVER_NAME'] == 'www.infogue.com') {
+	$config['base_url']			= 'http://www.infogue.com';
+	$config['base_path']		= realpath(dirname(__FILE__) . '/../..');
+	$config['online_widget']	= false;
 } else {
 	echo 'Please set up config.';
 	exit;
