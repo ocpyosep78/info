@@ -584,9 +584,11 @@
     }
     
     if (! function_exists('GetResource')) {
-        function GetResource($Source) {
+        function GetResource($Source, $param = array()) {
+			$param['mode'] = (isset($param['mode'])) ? $param['mode'] : 'rb+';
+			
             $Buffer = '';
-            $Handle = fopen($Source, "rb+");
+            $Handle = fopen($Source, $param['mode']);
             if ($Handle) {
                 while (!feof($Handle)) {
                     $Buffer .= fgets($Handle, 8192);
@@ -954,6 +956,44 @@
 			if (!empty($match[1])) {
 				$result = array( 'status' => true, 'word' => $match[1] );
 			}
+			
+			return $result;
+		}
+	}
+	
+	if (! function_exists('download_image')) {
+		function download_image($image_source) {
+			// ci
+			$ci =& get_instance();
+			
+			// extention
+			$extention = GetExtention($image_source);
+			$extention = (empty($extention)) ? 'jpg' : $extention;
+			
+			// file name
+			$filename = date("Ymd_His").'_'.rand(1000,9999).'.'.$extention;
+			
+			// prepare directory
+			$dir_year = date("Y");
+			$dir_year_month = $dir_year.'/'.date("m");
+			$dir_year_month_day = $dir_year_month.'/'.date("d");
+			$dir_image_path = $dir_year_month_day.'/'.$filename;
+			@mkdir($dir_year);
+			@mkdir($dir_year_month);
+			@mkdir($dir_year_month_day);
+			
+			// image result
+			$image_result = $ci->config->item('base_path').'/static/upload/'.$dir_image_path;
+			
+			// write image
+			$raw_image = GetResource($image_source, array( 'mode' => 'rb' ));
+			Write($image_result, $raw_image);
+			
+			// set result
+			$result = array(
+				'status' => true,
+				'dir_image_path' => $dir_image_path
+			);
 			
 			return $result;
 		}

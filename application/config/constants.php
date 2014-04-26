@@ -32,6 +32,7 @@ define('PAGE_STATIC',							'page_static');
 define('POST',									'post');
 define('POST_STATUS',							'post_status');
 define('POST_TAG',								'post_tag');
+define('SCRAPE',								'scrape');
 define('TAG',									'tag');
 define('USER',									'user');
 define('USER_TYPE',								'user_type');
