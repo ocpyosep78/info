@@ -8,7 +8,7 @@ class Post_model extends CI_Model {
 			'id', 'user_id', 'category_id', 'post_status_id', 'alias', 'name', 'desc', 'thumbnail', 'link_source', 'create_date', 'publish_date',
 			'view_count', 'is_hot', 'is_popular'
 		);
-		$this->table = array( '201309', '201310' );
+		$this->table = array( '201309', '201310', '201311', '201312', '201401', '201402', '201403' );
     }
 
     function update($param, $table = POST) {

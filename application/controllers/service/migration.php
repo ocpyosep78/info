@@ -6,7 +6,7 @@ class migration extends CI_Controller {
     }
     
     function index() {
-		$year_month = '2013/10';
+		$year_month = '2014/03';
 		
 		// prepare data
 		$table_old = 'post';
@@ -29,6 +29,8 @@ class migration extends CI_Controller {
     }
 	
 	function get_array($table, $year, $month) {
+		$array = array();
+		
 		$select_query = "
 			SELECT *
 			FROM $table

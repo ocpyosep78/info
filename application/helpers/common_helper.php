@@ -978,9 +978,9 @@
 			$dir_year_month = $dir_year.'/'.date("m");
 			$dir_year_month_day = $dir_year_month.'/'.date("d");
 			$dir_image_path = $dir_year_month_day.'/'.$filename;
-			@mkdir($dir_year);
-			@mkdir($dir_year_month);
-			@mkdir($dir_year_month_day);
+			@mkdir($ci->config->item('base_path').'/static/upload/'.$dir_year);
+			@mkdir($ci->config->item('base_path').'/static/upload/'.$dir_year_month);
+			@mkdir($ci->config->item('base_path').'/static/upload/'.$dir_year_month_day);
 			
 			// image result
 			$image_result = $ci->config->item('base_path').'/static/upload/'.$dir_image_path;
