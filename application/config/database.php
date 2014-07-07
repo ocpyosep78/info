@@ -8,7 +8,7 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
 	$db['default']['username'] = 'root';
 	$db['default']['password'] = '';
 	$db['default']['database'] = 'infogue_db';
-} else if ($_SERVER['SERVER_NAME'] == '103.11.132.77') {
+} else if ($_SERVER['SERVER_NAME'] == '103.11.133.140') {
 	$db['default']['hostname'] = 'localhost';
 	$db['default']['username'] = 'her0satr';
 	$db['default']['password'] = 'r8xPxHMGQ862eumd';
