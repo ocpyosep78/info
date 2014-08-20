@@ -89,7 +89,7 @@
 </div>
 -->
 
-<div class="related-post">
+<div class="related-post" style="margin-bottom: 25px;">
 	<h3>Berita Lainnya &raquo;</h3>
 	<div class="row">
 		<?php foreach ($array_post as $row) { ?>
@@ -107,7 +107,12 @@
 		<?php } ?>
 	</div>
 </div>
-	
+
+<div style="padding: 0 0 25px 0;">
+	<div id="disqus_thread"></div>
+</div>
+
+<!--
 <div id="comments" class="comments-area">
 	<h3 class="comments-heading"><?php echo count($array_comment); ?> komentar di <span class="comment-post-title"><?php echo $post['name']; ?></span></h3>
 	<?php if (count($array_comment) > 0) { ?>
@@ -156,7 +161,7 @@
 		</form>
 	</div>
 </div>
-
+-->
 				</div></div>
 				<?php $this->load->view( 'website/common/sidebar.php' ); ?>
 			</div></div>
@@ -172,6 +177,15 @@
 
 <script>
 $(document).ready(function() {
+	var disqus_shortname = 'infogue'; // required: replace example with your forum shortname
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+	
 	$("#commentform").validate({
 		rules: {
 			fullname: { required: true, minlength: 4 },
